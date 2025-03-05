@@ -58,16 +58,16 @@ class _SideNavState extends State<SideNav> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       //email
-                      NavIcon(icon: "assets/images/ic_email.svg",type: AppStrings.email,callback: navigateToOption,),
+                      NavIcon(icon: "assets/images/ic_email.svg",type: AppStrings.email,callback: AppUtils.navigateSocials,),
 
                       //linkedin
-                      NavIcon(icon: "assets/images/ic_email.svg",type:AppStrings.linkedin,callback: navigateToOption,),
+                      NavIcon(icon: "assets/images/ic_email.svg",type:AppStrings.linkedin,callback: AppUtils.navigateSocials,),
 
                       //github
-                      NavIcon(icon: "assets/images/ic_email.svg", type:AppStrings.github,callback: navigateToOption,),
+                      NavIcon(icon: "assets/images/ic_email.svg", type:AppStrings.github,callback: AppUtils.navigateSocials,),
 
                       //leetcode
-                      NavIcon(icon: "assets/images/ic_email.svg",type: AppStrings.leetcode,callback: navigateToOption,),
+                      NavIcon(icon: "assets/images/ic_email.svg",type: AppStrings.leetcode,callback: AppUtils.navigateSocials,),
 
                     ],
                   ),
@@ -95,15 +95,7 @@ class _SideNavState extends State<SideNav> {
     );
   }
 
-  void navigateToOption(String type) {
-   switch (type){
-     case AppStrings.email:
-       AppUtils.navigateToEmail();
-       break;
-     default:
-       AppUtils.navigateToUrl(type);
-   }
-  }
+
 
 
 }

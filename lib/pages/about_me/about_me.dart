@@ -14,6 +14,7 @@ import 'package:timeline_tile/timeline_tile.dart';
 import 'education_timeline.dart';
 
 class AboutMe extends StatelessWidget {
+
   const AboutMe({super.key});
 
   @override
@@ -101,11 +102,11 @@ class AboutMe extends StatelessWidget {
                   const SizedBox(height:20),
                   const Row(
                     children: [
-                      HoverElevatedCard(title: AppStrings.linkedin,description: AppStrings.careerInsights,image: "assets/images/ic_linked_in.svg",),
+                      HoverElevatedCard(title: AppStrings.linkedin,description: AppStrings.careerInsights,image: "assets/images/ic_linked_in.svg",onClicked: AppUtils.navigateSocials,),
                       SizedBox(width: 20,),
-                      HoverElevatedCard(title: AppStrings.github,description: AppStrings.myProjects,image: "assets/images/ic_github.svg",),
+                      HoverElevatedCard(title: AppStrings.github,description: AppStrings.myProjects,image: "assets/images/ic_github.svg",onClicked: AppUtils.navigateSocials,),
                       SizedBox(width: 20,),
-                      HoverElevatedCard(title: AppStrings.leetcode,description: AppStrings.problemSolver,image: "assets/images/ic_leetcode.svg",)
+                      HoverElevatedCard(title: AppStrings.leetcode,description: AppStrings.problemSolver,image: "assets/images/ic_leetcode.svg",onClicked: AppUtils.navigateSocials,),
                     ],
                   )
                 ],

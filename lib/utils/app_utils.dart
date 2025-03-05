@@ -40,4 +40,14 @@ class AppUtils{
       html.window.open(urls[type]??'', "_blank"); // Opens in new tab
     }
   }
+
+  static navigateSocials(String type){
+    switch (type){
+      case AppStrings.email:
+        AppUtils.navigateToEmail();
+        break;
+      default:
+        AppUtils.navigateToUrl(type);
+    }
+  }
 }
