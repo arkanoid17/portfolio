@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/components/commons/app_icon_button.dart';
 import 'package:portfolio/components/commons/hover_elevated_card.dart';
+import 'package:portfolio/pages/about_me/socials_card.dart';
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/utils/app_utils.dart';
 import 'package:portfolio/utils/colors.dart';
@@ -11,6 +12,7 @@ import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/utils/strings.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
+import '../../components/commons/header_indicator.dart';
 import 'education_timeline.dart';
 
 class AboutMe extends StatelessWidget {
@@ -98,15 +100,21 @@ class AboutMe extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(AppStrings.socials,style: AppTheme.textStyle(AppDimensions.largeFont, FontWeight.w500, Colors.black),),
+                   Row(
+                    children: [
+                      const HeaderIndicator(),
+                      const SizedBox(width: 10,),
+                      Text(AppStrings.socials,style: AppTheme.textStyle(AppDimensions.largeFont, FontWeight.w500, Colors.black),),
+                    ],
+                  ),
                   const SizedBox(height:20),
                   const Row(
                     children: [
-                      HoverElevatedCard(title: AppStrings.linkedin,description: AppStrings.careerInsights,image: "assets/images/ic_linked_in.svg",onClicked: AppUtils.navigateSocials,),
+                      HoverElevatedCard(title: AppStrings.linkedin, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.linkedin, desc: AppStrings.careerInsights, image: "assets/images/ic_linked_in.svg")),
                       SizedBox(width: 20,),
-                      HoverElevatedCard(title: AppStrings.github,description: AppStrings.myProjects,image: "assets/images/ic_github.svg",onClicked: AppUtils.navigateSocials,),
+                      HoverElevatedCard(title: AppStrings.github, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.github, desc: AppStrings.myProjects, image: "assets/images/ic_github.svg")),
                       SizedBox(width: 20,),
-                      HoverElevatedCard(title: AppStrings.leetcode,description: AppStrings.problemSolver,image: "assets/images/ic_leetcode.svg",onClicked: AppUtils.navigateSocials,),
+                      HoverElevatedCard(title: AppStrings.leetcode, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.leetcode, desc: AppStrings.problemSolver, image: "assets/images/ic_leetcode.svg")),
                     ],
                   )
                 ],
@@ -118,7 +126,13 @@ class AboutMe extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(AppStrings.education,style: AppTheme.textStyle(AppDimensions.largeFont, FontWeight.w500, Colors.black),),
+                Row(
+                  children: [
+                    const HeaderIndicator(),
+                    const SizedBox(width: 10,),
+                    Text(AppStrings.education,style: AppTheme.textStyle(AppDimensions.largeFont, FontWeight.w500, Colors.black),),
+                  ],
+                ),
                 const SizedBox(height:20),
                 EducationTimeLiine()
               ],

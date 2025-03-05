@@ -10,6 +10,9 @@ class AppUtils{
     AppStrings.github:"https://github.com/arkanoid17",
     AppStrings.leetcode:"https://leetcode.com/u/arkanoid17/",
     AppStrings.thriwin:"https://thriwin.io/",
+    AppStrings.thriwinLinkedIn:"https://www.linkedin.com/company/thriwin",
+    AppStrings.cloudedzLinkedIn:"https://www.linkedin.com/company/cloudedzc",
+    AppStrings.neevanLinkedIn:"https://www.linkedin.com/company/neevan-it-solutions-pvt-ltd",
   };
 
   static navigateToEmail()async{

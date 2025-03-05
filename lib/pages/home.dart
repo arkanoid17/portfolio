@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/work_experience/work_experience.dart';
 
 import '../components/side_nav/side_nav.dart';
 import 'about_me/about_me.dart';
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       case 1:
         return AboutMe();
       case 2:
-        return const Center(child: Text("Projects"));
+        return WorkExperience();
       case 3:
         return const Center(child: Text("About Me"));
       case 4:

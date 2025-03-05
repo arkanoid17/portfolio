@@ -6,11 +6,10 @@ import 'package:portfolio/utils/dimensions.dart';
 class HoverElevatedCard extends StatefulWidget {
 
   final title;
-  final description;
-  final String image;
+  final Widget view;
   final Function onClicked;
 
-  const HoverElevatedCard({super.key, this.title, this.description, required this.image, required this.onClicked});
+  const HoverElevatedCard({super.key,required this.title, required this.onClicked, required this.view});
 
   @override
   _HoverElevatedCardState createState() => _HoverElevatedCardState();
@@ -48,38 +47,7 @@ class _HoverElevatedCardState extends State<HoverElevatedCard> {
           child: Card(
             elevation: _isHovered ? 10 : 4, // Changes elevation dynamically
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: SizedBox(
-                width: AppDimensions.socialCardWidth, // Fixed width
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(widget.image, width: AppDimensions.defaultIconWidth, height: AppDimensions.defaultIconHeight),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            widget.title,
-                            style: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w500, null),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            widget.description,
-                            style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black54),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: widget.view,
           ),
         ),
       ),

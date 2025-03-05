@@ -9,6 +9,12 @@ class AppTheme{
     colorScheme: const ColorScheme.light(
       primary: AppColors.primary,
     ),
+    cardTheme: CardTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0), // Smooth rounded corners
+      ),
+    ),
+    fontFamily: 'Roboto',
     useMaterial3: true,
   );
 

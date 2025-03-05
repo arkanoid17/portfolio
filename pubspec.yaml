@@ -68,7 +68,12 @@ flutter:
     - assets/images/ic_email.svg
     - assets/images/ic_linked_in.svg
     - assets/images/ic_github.svg
+    - assets/images/ic_github_bw.svg
     - assets/images/ic_leetcode.svg
+    - assets/images/ic_gmail.svg
+    - assets/images/thriwin_logo.jpeg
+    - assets/images/ic_cloudedz.jpeg
+    - assets/images/ic_neevan.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

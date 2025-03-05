@@ -41,4 +41,10 @@ class AppStrings{
   static const String myProjects = "View my projects which are publicly available.";
 
   static const problemSolver = "View my solving skills with 100+ problems solved on leetcode";
+
+  static const String expDesc = "I have been working full time professional for 6 years and have interesting experiences. At the dawn of my career I primarily knew Java and took up my first role as an android Developer with Java. As my journey progressed and I embarked on new challenges where I took up Flutter to build cross platform mobile applications. Further down my career lane I have also taken up Python with Django for backend work as in my book we should not shy away from branching out in different technologies.";
+
+  static const thriwinLinkedIn = "Thriwin LinkedIn";
+  static const cloudedzLinkedIn = "Cloudedz LinkedIn";
+  static const neevanLinkedIn = "Neevan LinkedIn";
 }

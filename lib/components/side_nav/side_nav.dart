@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolio/components/side_nav/circle_image.dart';
+import 'package:portfolio/components/commons/circle_image.dart';
 import 'package:portfolio/components/side_nav/menu_option.dart';
 import 'package:portfolio/components/side_nav/nav_icon.dart';
 import 'package:portfolio/utils/colors.dart';
@@ -54,20 +54,20 @@ class _SideNavState extends State<SideNav> {
                   const SizedBox(height: 10),
                   const Text(AppStrings.websiteDesc,style: AppTheme.regularText,),
                   const SizedBox(height: 20),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       //email
-                      NavIcon(icon: "assets/images/ic_email.svg",type: AppStrings.email,callback: AppUtils.navigateSocials,),
+                      NavIcon(icon: "assets/images/ic_gmail.svg",type: AppStrings.email,callback: AppUtils.navigateSocials,),
 
                       //linkedin
-                      NavIcon(icon: "assets/images/ic_email.svg",type:AppStrings.linkedin,callback: AppUtils.navigateSocials,),
+                      NavIcon(icon: "assets/images/ic_linked_in.svg",type:AppStrings.linkedin,callback: AppUtils.navigateSocials,),
 
                       //github
-                      NavIcon(icon: "assets/images/ic_email.svg", type:AppStrings.github,callback: AppUtils.navigateSocials,),
+                      NavIcon(icon: "assets/images/ic_github_bw.svg", type:AppStrings.github,callback: AppUtils.navigateSocials,),
 
                       //leetcode
-                      NavIcon(icon: "assets/images/ic_email.svg",type: AppStrings.leetcode,callback: AppUtils.navigateSocials,),
+                      NavIcon(icon: "assets/images/ic_leetcode.svg",type: AppStrings.leetcode,callback: AppUtils.navigateSocials,),
 
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../theme/app_theme.dart';
@@ -18,7 +19,7 @@ class NavIcon extends StatelessWidget {
       width: AppDimensions.iconWidth,
       height: AppDimensions.iconHeight,
       decoration: AppTheme.whiteCircle,
-      child: GestureDetector(
+      child: InkWell(
         onTap: ()=>callback(type),
         child: Padding(
           padding: EdgeInsets.all(4.0),

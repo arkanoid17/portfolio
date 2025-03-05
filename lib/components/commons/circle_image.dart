@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 
 
 class CircleImage extends StatelessWidget {
-  var image = "";
-  var imageWidth = 100.0;
-  var imageHeight = 100.0;
+  final image;
+  final imageWidth;
+  final imageHeight;
 
-  CircleImage(
+  const CircleImage(
       {super.key,
       required this.image,
       required this.imageWidth,
@@ -16,6 +16,7 @@ class CircleImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
         borderRadius: BorderRadius.circular(imageWidth),
-        child: Image.asset(image, fit: BoxFit.cover));
+        child: Image.asset(image,width: imageWidth,height: imageHeight,)
+    );
   }
 }
