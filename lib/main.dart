@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/home.dart';
+import 'package:portfolio/pages/home/home.dart';
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/utils/strings.dart';
 

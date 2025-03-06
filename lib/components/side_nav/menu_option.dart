@@ -10,8 +10,9 @@ class MenuOption extends StatelessWidget {
   final String title;
   final bool selected;
   final Function onMenuOptionSelected;
+  final GlobalKey<ScaffoldState>? scaffoldKey;
 
-  const MenuOption({super.key, required this.title, required this.selected, required this.onMenuOptionSelected});
+  const MenuOption({super.key, required this.title, required this.selected, required this.onMenuOptionSelected, this.scaffoldKey});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,10 @@ class MenuOption extends StatelessWidget {
         leading: Icon(_getIcon(),color: selected?Colors.white:Colors.white38,),
         title: Text(title,style: selected?AppTheme.selectedTabTextStyle:AppTheme.unSelectedTabTextStyle,),
         onTap: ()=>{
+
+            if(scaffoldKey!=null){
+              scaffoldKey?.currentState?.closeDrawer(),
+            },
             if(title==AppStrings.aboutMe){
               onMenuOptionSelected(1),
             },

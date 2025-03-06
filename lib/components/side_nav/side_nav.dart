@@ -15,8 +15,9 @@ class SideNav extends StatefulWidget{
 
   final int selected;
   final Function onMenuOptionSelected;
+  final GlobalKey<ScaffoldState>? scaffoldKey;
 
-  const SideNav({super.key, required this.selected, required this.onMenuOptionSelected});
+  const SideNav({super.key, required this.selected, required this.onMenuOptionSelected, this.scaffoldKey});
 
   @override
   State<SideNav> createState() => _SideNavState();
@@ -81,10 +82,10 @@ class _SideNavState extends State<SideNav> {
             Center(
               child: Column(
                 children: [
-                  MenuOption(title: AppStrings.aboutMe, selected: widget.selected==1,onMenuOptionSelected: widget.onMenuOptionSelected,),
-                  MenuOption(title: AppStrings.experience, selected: widget.selected==2,onMenuOptionSelected: widget.onMenuOptionSelected,),
-                  MenuOption(title: AppStrings.projects, selected: widget.selected==3,onMenuOptionSelected: widget.onMenuOptionSelected,),
-                  MenuOption(title: AppStrings.skills, selected: widget.selected==4,onMenuOptionSelected: widget.onMenuOptionSelected,),
+                  MenuOption(title: AppStrings.aboutMe, selected: widget.selected==1,onMenuOptionSelected: widget.onMenuOptionSelected,scaffoldKey: widget.scaffoldKey,),
+                  MenuOption(title: AppStrings.experience, selected: widget.selected==2,onMenuOptionSelected: widget.onMenuOptionSelected,scaffoldKey: widget.scaffoldKey,),
+                  MenuOption(title: AppStrings.projects, selected: widget.selected==3,onMenuOptionSelected: widget.onMenuOptionSelected,scaffoldKey: widget.scaffoldKey,),
+                  MenuOption(title: AppStrings.skills, selected: widget.selected==4,onMenuOptionSelected: widget.onMenuOptionSelected,scaffoldKey: widget.scaffoldKey,),
                 ],
               ),
             )

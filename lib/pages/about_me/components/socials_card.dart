@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../theme/app_theme.dart';
-import '../../utils/dimensions.dart';
-import '../../components/commons/circle_image.dart';
+import '../../../theme/app_theme.dart';
+import '../../../utils/dimensions.dart';
+import '../../../components/commons/circle_image.dart';
 
 class SocialsCard extends StatelessWidget {
 
