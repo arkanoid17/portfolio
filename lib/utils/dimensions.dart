@@ -21,4 +21,7 @@ class AppDimensions{
    static const defaultIconHeight = 24.0;
 
   static const socialCardWidth = 250.0;
+
+   static const double projectIconWidth = 42.0;
+   static const double projectIconHeight = 42.0;
 }

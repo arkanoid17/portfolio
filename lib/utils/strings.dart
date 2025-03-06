@@ -47,4 +47,13 @@ class AppStrings{
   static const thriwinLinkedIn = "Thriwin LinkedIn";
   static const cloudedzLinkedIn = "Cloudedz LinkedIn";
   static const neevanLinkedIn = "Neevan LinkedIn";
+
+  static const String rolesAndResp = "Roles and Responsibilities";
+
+  static const vajraPlaystore = "Vajra playstore";
+  static const galaxyPlayStore = "Galaxy play store";
+  static const vajra = "Vajra";
+  static const galaxy = "Galaxy";
+
+  static const myschoolapp = "MySchoolApp";
 }

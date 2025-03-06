@@ -13,6 +13,9 @@ class AppUtils{
     AppStrings.thriwinLinkedIn:"https://www.linkedin.com/company/thriwin",
     AppStrings.cloudedzLinkedIn:"https://www.linkedin.com/company/cloudedzc",
     AppStrings.neevanLinkedIn:"https://www.linkedin.com/company/neevan-it-solutions-pvt-ltd",
+    AppStrings.vajraPlaystore:'https://play.google.com/store/apps/details?id=com.adjointtechnologies.vajra&hl=en',
+    AppStrings.galaxyPlayStore:'https://play.google.com/store/apps/details?id=com.adjointtechnologies.galaxy&hl=en',
+    AppStrings.myschoolapp:'https://www.myschoolapp.in/',
   };
 
   static navigateToEmail()async{

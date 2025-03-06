@@ -11,7 +11,7 @@ class AppTheme{
     ),
     cardTheme: CardTheme(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0), // Smooth rounded corners
+        borderRadius: BorderRadius.circular(8.0), // Smooth rounded corners
       ),
     ),
     fontFamily: 'Roboto',
@@ -72,5 +72,18 @@ class AppTheme{
         shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6), // Rounded edges
       )
-     );
+ );
+
+ static  BoxDecoration greyRoundedDecor = BoxDecoration(
+   color: AppColors.blackDivider,
+   borderRadius: BorderRadius.circular(8.0)
+ );
+
+  static var greyBorder = BoxDecoration(
+      border: Border.all(
+        width: 0.5,
+        color: Colors.black12,
+      ),
+      borderRadius: const BorderRadius.all(Radius.circular(8))
+  );
 }

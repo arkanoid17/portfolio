@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/theme/app_theme.dart';
+import 'package:portfolio/utils/colors.dart';
 
 import '../../utils/strings.dart';
 
@@ -17,6 +18,7 @@ class MenuOption extends StatelessWidget {
     return ListTile(
         dense: true,
         visualDensity: const VisualDensity(vertical: -4),
+        leading: Icon(_getIcon(),color: selected?Colors.white:Colors.white38,),
         title: Text(title,style: selected?AppTheme.selectedTabTextStyle:AppTheme.unSelectedTabTextStyle,),
         onTap: ()=>{
             if(title==AppStrings.aboutMe){
@@ -33,5 +35,19 @@ class MenuOption extends StatelessWidget {
             },
         },
     );
+  }
+
+  IconData? _getIcon() {
+    switch(title){
+      case AppStrings.aboutMe:
+        return Icons.person_2_outlined;
+      case AppStrings.experience:
+        return CupertinoIcons.briefcase;
+      case AppStrings.projects:
+        return Icons.folder_outlined;
+      case AppStrings.skills:
+        return Icons.laptop;
+    }
+    return null;
   }
 }
