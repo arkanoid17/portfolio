@@ -80,6 +80,13 @@ flutter:
     - assets/images/vajra_logo.jpg
     - assets/images/galaxy_logo.jpg
     - assets/images/myschoolap.png
+    - assets/images/ic_recipe.png
+    - assets/images/recipe_ss1.jpeg
+    - assets/images/recipe_ss2.jpeg
+    - assets/images/recipe_ss3.jpeg
+    - assets/images/recipe_ss4.jpeg
+    - assets/images/recipe_ss5.jpeg
+    - assets/images/recipe_ss6.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

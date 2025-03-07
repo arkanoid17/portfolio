@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.portfolio,
       theme: AppTheme.themeData,
       home: const HomePage(),
-
-
+      debugShowCheckedModeBanner: false,
     );
   }
 }

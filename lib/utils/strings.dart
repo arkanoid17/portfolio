@@ -56,4 +56,10 @@ class AppStrings{
   static const galaxy = "Galaxy";
 
   static const myschoolapp = "MySchoolApp";
+  static const techUsed = "Technology Used";
+  static const screenShots = "Screenshots";
+
+  static const String projectsDesc = "Hi, over the years I have been very enthusiastic about technology which drove me to build quite a few projects. Here are few of them list ed which I am very proud of and also wish to showcase my projects to the world. Feel free to view the repository and upvote them if you like it.";
+
+  static const String keyPoints = "Key points";
 }

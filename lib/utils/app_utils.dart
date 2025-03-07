@@ -43,7 +43,13 @@ class AppUtils{
       }
     } catch (e) {
 
-      html.window.open(urls[type]??'', "_blank"); // Opens in new tab
+      if(urls.containsKey(type)){
+        html.window.open(urls[type]??'', "_blank"); // Opens in new tab
+      }else{
+        html.window.open(type, "_blank"); // Opens in new tab
+      }
+
+
     }
   }
 
