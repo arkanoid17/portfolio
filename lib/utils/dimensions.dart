@@ -1,8 +1,13 @@
 class AppDimensions{
+
+   static const double mobile = 600.0;
+   static const double tablet = 1024.0;
+
    static const double navBarWidth = 250.0;
    static const double pagePadding = 16.0;
 
    static const double aboutMeNameFontSize = 28.0;
+   static const double aboutMeNameMobileFontSize = 22.0;
 
    static const double nameFontSize = 20.0;
 

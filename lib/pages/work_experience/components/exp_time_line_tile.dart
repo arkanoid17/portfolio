@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-import '../../../theme/app_theme.dart';
-import '../../../utils/dimensions.dart';
 
 class ExpTimeLineTile extends StatelessWidget {
 

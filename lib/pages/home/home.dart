@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home/home_desktop.dart';
 import 'package:portfolio/pages/home/home_mobile.dart';
 import 'package:portfolio/pages/work_experience/work_experience.dart';
+import 'package:portfolio/utils/dimensions.dart';
 
 import '../../components/side_nav/side_nav.dart';
 import '../about_me/about_me.dart';
@@ -48,14 +49,14 @@ class _HomePageState extends State<HomePage> {
 
     return LayoutBuilder(
         builder: (context,constraints) {
-          if (constraints.maxWidth < 600) {
+          if (constraints.maxWidth < AppDimensions.mobile) {
             return HomeMobile(
               selected: selected,
               onMenuSelected: onMenuSelected,
               getSelectedPage: getSelectedPage,
             );
           }
-          else if (constraints.maxWidth < 1024) {
+          else if (constraints.maxWidth < AppDimensions.tablet) {
             return HomeTablet(
               selected: selected,
               onMenuSelected: onMenuSelected,

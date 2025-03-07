@@ -20,7 +20,9 @@ import '../../../components/commons/link_preview.dart';
 
 class Thriwin extends StatefulWidget {
 
-  Thriwin({super.key});
+  final BoxConstraints? constraints;
+
+  Thriwin({super.key, this.constraints});
 
   @override
   State<Thriwin> createState() => _ThriwinState();
@@ -28,10 +30,6 @@ class Thriwin extends StatefulWidget {
 
 class _ThriwinState extends State<Thriwin> {
 
-
-  List<String> get urls => const [
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +47,9 @@ class _ThriwinState extends State<Thriwin> {
                       onTap: ()=>AppUtils.navigateToUrl(AppStrings.thriwinLinkedIn),
                       child: Image.asset("assets/images/thriwin_logo.jpeg",width: 50,height: 50,)
                   ),
+
                   const SizedBox(width: 10,),
+
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -75,94 +75,92 @@ class _ThriwinState extends State<Thriwin> {
               const SizedBox(height: 10,),
 
               ExpTimeLineTile(
-                  endChild: ListTile(
-                    visualDensity: const VisualDensity(vertical: -4),
-                    title: Text(
-                      "Responsible to build the backend for notification service in Thriwin.io especially OTA notification service using Firebase and how to add actions on notifications. Also was responsible to track the deliverability rates and maintain scale for all users so as to not block our servers.",
-                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                  endChild: Padding(
+                    padding: EdgeInsets.only(top:widget.constraints==null?8.0:0.0),
+                    child: ListTile(
+                      visualDensity: const VisualDensity(vertical: -4),
+                      title: Text(
+                        "Responsible to build the backend for notification service in Thriwin.io especially OTA notification service using Firebase and how to add actions on notifications. Also was responsible to track the deliverability rates and maintain scale for all users so as to not block our servers.",
+                        style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                      ),
                     ),
                   ),
                 isStart: true,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible to build the system for email integration which is used to connect their emails using OAUTH2 and sync mailboxes in our platform. Also added SMTP and IMAP connection of emails for external mails and built SMTP bulk email sender which is used across channels.",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:widget.constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible to build the system for email integration which is used to connect their emails using OAUTH2 and sync mailboxes in our platform. Also added SMTP and IMAP connection of emails for external mails and built SMTP bulk email sender which is used across channels.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: false,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible to build the mobile application for Sales-force management application for product distribution, store onboarding and promotion via multiple schemes options. Role and permission based application with multiple roles like, salesmen, distributor and zonal mangers. ",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:widget.constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible to build the mobile application for Sales-force management application for product distribution, store onboarding and promotion via multiple schemes options. Role and permission based application with multiple roles like, salesmen, distributor and zonal mangers. ",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: false,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text("Projects I worked on in this company.",style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
-                  subtitle: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:widget.constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text("Projects I worked on in this company.",style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
+                    subtitle: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
 
-                       SizedBox(height: 10,),
+                         SizedBox(height: 10,),
 
-                       Row(
-                        children: [
-                          JobProjectCard(
-                            name: AppStrings.thriwin,
-                            navigate: AppStrings.thriwin,
-                            image: "assets/images/thriwin_logo.jpeg",
-                          ),
-                          SizedBox(width: 20,),
-                          JobProjectCard(
-                            name: AppStrings.vajra,
-                            navigate: AppStrings.vajraPlaystore,
-                            image: "assets/images/vajra_logo.jpg",
-                          ),
-                          SizedBox(width: 20,),
-                          JobProjectCard(
-                            name: AppStrings.galaxy,
-                            navigate: AppStrings.galaxyPlayStore,
-                            image: "assets/images/galaxy_logo.jpg",
-                          )
-                        ],
-                      )
-
-                    ],
+                         Row(
+                          children: [
+                            JobProjectCard(
+                              name: AppStrings.thriwin,
+                              navigate: AppStrings.thriwin,
+                              image: "assets/images/thriwin_logo.jpeg",
+                            ),
+                            SizedBox(width: 20,),
+                            JobProjectCard(
+                              name: AppStrings.vajra,
+                              navigate: AppStrings.vajraPlaystore,
+                              image: "assets/images/vajra_logo.jpg",
+                            ),
+                            SizedBox(width: 20,),
+                            JobProjectCard(
+                              name: AppStrings.galaxy,
+                              navigate: AppStrings.galaxyPlayStore,
+                              image: "assets/images/galaxy_logo.jpg",
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-
                 ),
                 isStart: false,
                 isEnd: true,
               ),
-
               const SizedBox(height: 20,),
-
-
             ],
           ),
         )
     );
-  }
-
-
-  void checkLink(){
-    var data = AnyLinkPreview.isValidLink(
-        urls[1]
-    );
-
-    print(data);
   }
 
 

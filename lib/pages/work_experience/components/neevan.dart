@@ -9,7 +9,10 @@ import '../../../utils/strings.dart';
 import 'exp_time_line_tile.dart';
 
 class Neevan extends StatelessWidget {
-  const Neevan({super.key});
+
+  final BoxConstraints? constraints;
+
+  const Neevan({super.key, this.constraints});
 
   @override
   Widget build(BuildContext context) {
@@ -35,46 +38,59 @@ class Neevan extends StatelessWidget {
                       ),
                       SizedBox(height: 5,),
                       Text(
-                        "Neevan IT Solutions Pvt Ltd  •  Internship",
+                        softWrap: true,
+                        maxLines: 2,
+                        "Neevan IT Solutions •  Internship",
                         style: AppTheme.textStyle(AppDimensions.semiMedium, FontWeight.normal, Colors.black54),
                       ),
                       Text(
                         "Oct 2018 - Apr 2019  •  7 months",
+                        maxLines: 2,
                         style: AppTheme.textStyle(AppDimensions.semiMedium, FontWeight.normal, Colors.black54),
                       )
                     ],
                   ),
                 ],
+
               ),
               const SizedBox(height: 20,),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible to build common components across the mobile application for match-making application with features like Auth, Dashboard, Profile management, match listing and others.",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible to build common components across the mobile application for match-making application with features like Auth, Dashboard, Profile management, match listing and others.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: true,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible to building continuous API integrations across modules like profile details and updating these details, did also contribute heavily in Auth module in User registration.",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible to building continuous API integrations across modules like profile details and updating these details, did also contribute heavily in Auth module in User registration.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: false,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible for building aadhaar verification for users during registration via scanning QR code of their aadhaar card to cross verify the entered details from user.",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible for building aadhaar verification for users during registration via scanning QR code of their aadhaar card to cross verify the entered details from user.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: false,

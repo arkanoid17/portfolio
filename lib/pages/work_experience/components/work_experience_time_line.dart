@@ -8,12 +8,18 @@ import 'package:timeline_tile/timeline_tile.dart';
 
 class WorkExperienceTimeLine extends StatelessWidget {
 
-  final jobList = [Thriwin(),Cloudedz(),Neevan()];
+  final BoxConstraints? constraints;
+
+  const WorkExperienceTimeLine({super.key, this.constraints});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: jobList,
+      children: [
+        Thriwin(),
+        Cloudedz(),
+        Neevan()
+      ],
     );
   }
 }

@@ -10,7 +10,10 @@ import 'exp_time_line_tile.dart';
 import 'job_project_card.dart';
 
 class Cloudedz extends StatelessWidget {
-  const Cloudedz({super.key});
+
+  final BoxConstraints? constraints;
+
+  const Cloudedz({super.key, this.constraints});
 
   @override
   Widget build(BuildContext context) {
@@ -53,62 +56,74 @@ class Cloudedz extends StatelessWidget {
               const SizedBox(height: 10,),
 
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible to build Mobile Application for School management. Created individual modules for school content management, attendance management, online exams and many more. ",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible to build Mobile Application for School management. Created individual modules for school content management, attendance management, online exams and many more. ",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: true,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible to build online live examinations for over 50k live users and have a seamless experience while they are at it. Used S3 bucket to bulky collect responses and keep synchronized across for all users.",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible to build online live examinations for over 50k live users and have a seamless experience while they are at it. Used S3 bucket to bulky collect responses and keep synchronized across for all users.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: false,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text(
-                    "Responsible for zoom SDK integration for efficient live classes module, during covid it was a huge in demand feature for efficient school management across multiple schools.",
-                    style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text(
+                      "Responsible for zoom SDK integration for efficient live classes module, during covid it was a huge in demand feature for efficient school management across multiple schools.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),
+                    ),
                   ),
                 ),
                 isStart: false,
                 isEnd: false,
               ),
               ExpTimeLineTile(
-                endChild: ListTile(
-                  visualDensity: const VisualDensity(vertical: -4),
-                  title: Text("Projects I worked on in this company.",style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
-                  subtitle: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                endChild: Padding(
+                  padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
+                  child: ListTile(
+                    visualDensity: const VisualDensity(vertical: -4),
+                    title: Text("Projects I worked on in this company.",style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
+                    subtitle: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
 
-                      SizedBox(height: 10,),
+                        SizedBox(height: 10,),
 
-                      Row(
-                        children: [
-                          JobProjectCard(
-                            name: AppStrings.myschoolapp,
-                            navigate: AppStrings.myschoolapp,
-                            image: "assets/images/myschoolap.png",
-                          ),
-                          SizedBox(width: 20,),
-                        ],
-                      )
+                        Row(
+                          children: [
+                            JobProjectCard(
+                              name: AppStrings.myschoolapp,
+                              navigate: AppStrings.myschoolapp,
+                              image: "assets/images/myschoolap.png",
+                            ),
+                            SizedBox(width: 20,),
+                          ],
+                        )
 
-                    ],
+                      ],
+                    ),
+
                   ),
-
                 ),
                 isStart: false,
                 isEnd: true,
