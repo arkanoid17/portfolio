@@ -28,28 +28,28 @@ class ProjectCard extends StatelessWidget {
           pageBuilder: (context, animation, secondaryAnimation) => ProjectDetails(project: project),
         ),
       ),
-      child: Hero(
-          tag: project.name,
-        child: Card(
-          elevation: 4,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  Image.asset(
+      child: Card(
+        elevation: 4,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                Hero(
+                  tag: project.name,
+                  child: Image.asset(
                     project.logo,
                     width: AppDimensions.projectIconWidth,
                     height: AppDimensions.projectIconHeight,
                   ),
-                  const SizedBox(height: 10,),
-                  Text(project.name,style: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w500, Colors.black),),
-                  const SizedBox(height: 20,),
-                  Text(project.briefDesc,style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black54),maxLines: 3,),
-                ],
-              ),
-            )
-        ),
+                ),
+                const SizedBox(height: 10,),
+                Text(project.name,style: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w500, Colors.black),),
+                const SizedBox(height: 20,),
+                Text(project.briefDesc,style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black54),maxLines: 3,),
+              ],
+            ),
+          )
       ),
     );
   }
