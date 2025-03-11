@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home/home_desktop.dart';
 import 'package:portfolio/pages/home/home_mobile.dart';
 import 'package:portfolio/pages/projects/projects.dart';
+import 'package:portfolio/pages/skills/skills.dart';
 import 'package:portfolio/pages/work_experience/work_experience.dart';
 import 'package:portfolio/utils/dimensions.dart';
 
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       case 3:
         return Projects();
       case 4:
-        return const Center(child: Text("Contact"));
+        return Skills();
       default:
         return const Center(child: Text("Page Not Found"));
     }

@@ -8,8 +8,9 @@ import 'package:portfolio/utils/dimensions.dart';
 class ProjectCard extends StatelessWidget {
 
   final ProjectModel project;
+  final BoxConstraints? constraints;
 
-  const ProjectCard({super.key, required this.project});
+  const ProjectCard({super.key, required this.project, this.constraints});
 
   @override
   Widget build(BuildContext context) {

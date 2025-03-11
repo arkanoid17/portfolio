@@ -60,6 +60,7 @@ class AppStrings{
   static const screenShots = "Screenshots";
 
   static const String projectsDesc = "Hi, over the years I have been very enthusiastic about technology which drove me to build quite a few projects. Here are few of them list ed which I am very proud of and also wish to showcase my projects to the world. Feel free to view the repository and upvote them if you like it.";
+  static const String skillDesc = "Hi, I have garnered a lot of skills over the years in my career as a developer. Below are few skills that I have acquired and my proficiency in them. I still wish to pick up more skills and increase my proficiency over the existing ones going forward.";
 
   static const String keyPoints = "Key points";
 }

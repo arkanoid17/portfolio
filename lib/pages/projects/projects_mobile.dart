@@ -9,8 +9,9 @@ import '../../utils/strings.dart';
 
 class ProjectsMobile extends StatefulWidget {
 
+  final BoxConstraints? constraints;
 
-  ProjectsMobile({super.key});
+  ProjectsMobile({super.key, this.constraints});
 
   @override
   State<ProjectsMobile> createState() => _ProjectsState();
@@ -41,7 +42,7 @@ class _ProjectsState extends State<ProjectsMobile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(AppDimensions.pagePadding),
+        padding: const EdgeInsets.all(AppDimensions.pagePadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -53,7 +54,7 @@ class _ProjectsState extends State<ProjectsMobile> {
              ],
            ),
             const SizedBox(height: 10,),
-            Text(AppStrings.projectsDesc,style: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w400, Colors.black),),
+            Text(AppStrings.projectsDesc,style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
             const SizedBox(height: 20,),
             Expanded(
                 child: GridView.builder(
@@ -63,7 +64,7 @@ class _ProjectsState extends State<ProjectsMobile> {
                 mainAxisSpacing: 10, // Space between rows
                 childAspectRatio: 1.8, // Aspect ratio of grid items
               ),
-              itemBuilder: (context,index)=>ProjectCard(project: projects[index]),
+              itemBuilder: (context,index)=>ProjectCard(project: projects[index],constraints: widget.constraints,),
               itemCount: projects.length,
             )
             )
