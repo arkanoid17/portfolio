@@ -17,10 +17,6 @@ class ProjectCard extends StatelessWidget {
       splashColor: Colors.transparent, // Hides ripple effect
       highlightColor: Colors.transparent, // Hides highlight effect
       hoverColor: Colors.transparent,
-      // onTap: ()=>showDialog(
-      //     context: context,
-      //     builder: (ctx)=>ProjectDetails(project:project)
-      // ),
       onTap: ()=>Navigator.push(
         context,
         PageRouteBuilder(
@@ -34,6 +30,7 @@ class ProjectCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Hero(
                   tag: project.name,

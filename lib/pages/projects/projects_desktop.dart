@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/projects/components/project_card.dart';
 import 'package:portfolio/pages/projects/models/project_model.dart';
-import 'package:portfolio/pages/projects/projects_desktop.dart';
-import 'package:portfolio/pages/projects/projects_mobile.dart';
-import 'package:portfolio/pages/projects/projects_tablet.dart';
 import 'package:portfolio/utils/dimensions.dart';
 
 import '../../components/commons/header_indicator.dart';
 import '../../theme/app_theme.dart';
 import '../../utils/strings.dart';
 
-class Projects extends StatefulWidget {
+class ProjectsDesktop extends StatefulWidget {
 
 
-  Projects({super.key});
+  ProjectsDesktop({super.key});
 
   @override
-  State<Projects> createState() => _ProjectsState();
+  State<ProjectsDesktop> createState() => _ProjectsState();
 }
 
-class _ProjectsState extends State<Projects> {
+class _ProjectsState extends State<ProjectsDesktop> {
   List<ProjectModel> projects = [
 
   ];
@@ -43,17 +40,35 @@ class _ProjectsState extends State<Projects> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-        builder: (context,constraints){
-          print(constraints.maxWidth);
-          if(constraints.maxWidth<AppDimensions.mobile){
-            return ProjectsMobile();
-          }else if(constraints.maxWidth<AppDimensions.tablet){
-            return ProjectsTablet();
-          }else{
-            return ProjectsDesktop();
-          }
-        }
+    return Padding(
+        padding: EdgeInsets.all(AppDimensions.pagePadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+           Row(
+             children: [
+               const HeaderIndicator(),
+               const SizedBox(width: 10,),
+               Text(AppStrings.projects,style: AppTheme.textStyle(AppDimensions.largeFont, FontWeight.w500, Colors.black),),
+             ],
+           ),
+            const SizedBox(height: 10,),
+            Text(AppStrings.projectsDesc,style: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w400, Colors.black),),
+            const SizedBox(height: 20,),
+            Expanded(
+                child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4, // Number of columns
+                crossAxisSpacing: 10, // Space between columns
+                mainAxisSpacing: 10, // Space between rows
+                childAspectRatio: 1.5, // Aspect ratio of grid items
+              ),
+              itemBuilder: (context,index)=>ProjectCard(project: projects[index]),
+              itemCount: projects.length,
+            )
+            )
+          ],
+        ),
     );
   }
 }
