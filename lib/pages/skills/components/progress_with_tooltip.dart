@@ -18,7 +18,7 @@ class ProgressWithTooltip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 100),
+      padding: const EdgeInsets.only(right: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -32,17 +32,20 @@ class ProgressWithTooltip extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           Flexible(
-            fit: FlexFit.tight,
-            flex: 4,
+            fit: FlexFit.loose,
+            flex: 5,
             child: Tooltip(
               message: progress.toStringAsFixed(1), // Tooltip shows percentage
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10), // Circular edges
-                child: LinearProgressIndicator(
-                  minHeight: 10,
-                  value: (progress*2)/10,
-                  color: AppColors.primary,
-                  backgroundColor: AppColors.blackDivider,
+              child: SizedBox(
+                width: 100,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10), // Circular edges
+                  child: LinearProgressIndicator(
+                    minHeight: 10,
+                    value: (progress*2)/10,
+                    color: AppColors.link,
+                    backgroundColor: AppColors.blackDivider,
+                  ),
                 ),
               ),
             ),

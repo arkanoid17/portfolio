@@ -38,6 +38,19 @@ class _ProjectsState extends State<Projects> {
             repoLink: "https://github.com/arkanoid17/recipeapp"
         )
     );
+
+    projects.add(
+        ProjectModel(
+            name: "Portfolio",
+            type: "Website",
+            logo: "assets/images/ic_recipe.png",
+            briefDesc: "This website is the culmination of a person I am and also my journey in the tech career. Also highlights my skills and socials where you can get to know more about me.",
+            techsUsed: "Flutter, Dart, Github hosting.",
+            screenshots: ["assets/images/portfolio-1.png","assets/images/portfolio-2.png","assets/images/portfolio-3.png","assets/images/portfolio-4.png","assets/images/portfolio-5.png"],
+            keyPoints: ["Website design using the flutter interface.","Responsive design for all devices like desktop, mobile and tablet.","Interactive components building with the flutter interface like timeline designs and hero animations.","Clear definitions of all my works and experience with links to repository, websites and applications."],
+            repoLink: "https://github.com/arkanoid17/portfolio"
+        )
+    );
     super.initState();
   }
 
@@ -47,11 +60,11 @@ class _ProjectsState extends State<Projects> {
         builder: (context,constraints){
           print(constraints.maxWidth);
           if(constraints.maxWidth<AppDimensions.mobile){
-            return ProjectsMobile();
+            return ProjectsMobile(projects: projects,);
           }else if(constraints.maxWidth<AppDimensions.tablet){
-            return ProjectsTablet();
+            return ProjectsTablet(projects: projects,);
           }else{
-            return ProjectsDesktop();
+            return ProjectsDesktop(projects: projects,);
           }
         }
     );

@@ -25,7 +25,7 @@ class WorkExperienceDesktop extends StatelessWidget {
                 Text(AppStrings.experience,style: AppTheme.textStyle(AppDimensions.largeFont, FontWeight.w500, Colors.black),),
               ],
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(height: 20,),
             // Text(AppStrings.expDesc,style: AppTheme.textStyle(AppDimensions.semiMedium, FontWeight.w400, Colors.black54),),
             Text.rich(
               TextSpan(
@@ -71,8 +71,8 @@ class WorkExperienceDesktop extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            const SizedBox(height: 20,),
-            WorkExperienceTimeLine()
+            const SizedBox(height: 40,),
+            const WorkExperienceTimeLine()
           ],
         ),
       ),

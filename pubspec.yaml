@@ -87,6 +87,11 @@ flutter:
     - assets/images/recipe_ss4.jpeg
     - assets/images/recipe_ss5.jpeg
     - assets/images/recipe_ss6.jpeg
+    - assets/images/portfolio-1.png
+    - assets/images/portfolio-2.png
+    - assets/images/portfolio-3.png
+    - assets/images/portfolio-4.png
+    - assets/images/portfolio-5.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

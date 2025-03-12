@@ -9,30 +9,18 @@ import '../../utils/strings.dart';
 
 class ProjectsTablet extends StatefulWidget {
 
+  final List<ProjectModel> projects;
 
-  ProjectsTablet({super.key});
+  const ProjectsTablet({super.key, required this.projects});
 
   @override
   State<ProjectsTablet> createState() => _ProjectsState();
 }
 
 class _ProjectsState extends State<ProjectsTablet> {
-  List<ProjectModel> projects = [];
 
   @override
   void initState() {
-    projects.add(
-        ProjectModel(
-            name: "Recipe-app",
-            type: "Mobile application, backend",
-            logo: "assets/images/ic_recipe.png",
-            briefDesc: "This application is your go to app to get recipe's from all our trusted community. View recipe's favourite them or even read articles posted across community. Also share valuable feedback in the review section. Most importantly try out these delish recipes they do be bussin!",
-            techsUsed: "Flutter, Dart, Firebase-Auth, Firebase storage, Firestore DB.",
-            screenshots: ["assets/images/recipe_ss1.jpeg","assets/images/recipe_ss2.jpeg","assets/images/recipe_ss3.jpeg","assets/images/recipe_ss4.jpeg","assets/images/recipe_ss5.jpeg","assets/images/recipe_ss6.jpeg"],
-            keyPoints: ["Easy authorization via email and password.","View recipes from everyone in the community to get various cuisines.","Favourite any recipe that catches your tummy, I meant eye for future reference.","View recipes based on likes,reviews and most favourited by the community","Share your own recipes across the community.","Give constructive feedback on recipes according to your expertise.","Read and share interesting articles related to food."],
-            repoLink: "https://github.com/arkanoid17/recipeapp"
-        )
-    );
     super.initState();
   }
 
@@ -59,10 +47,10 @@ class _ProjectsState extends State<ProjectsTablet> {
                 crossAxisCount: 2, // Number of columns
                 crossAxisSpacing: 10, // Space between columns
                 mainAxisSpacing: 10, // Space between rows
-                childAspectRatio: 2, // Aspect ratio of grid items
+                childAspectRatio: 1.5, // Aspect ratio of grid items
               ),
-              itemBuilder: (context,index)=>ProjectCard(project: projects[index]),
-              itemCount: projects.length,
+              itemBuilder: (context,index)=>ProjectCard(project: widget.projects[index]),
+              itemCount: widget.projects.length,
             )
             )
           ],
