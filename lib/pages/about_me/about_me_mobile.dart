@@ -86,7 +86,7 @@ class AboutMeMobile extends StatelessWidget {
                 Text(AppStrings.aboutMeDesc,style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black54)),
                 const SizedBox(height: 20,),
                 AppIconButton(
-                    onPressed: ()=>{},
+                    onPressed: ()=>AppUtils.navigateToPdfViewer(context),
                     icon: Icons.library_books_outlined,
                     buttonText: AppStrings.resume,
                     buttonTextStyle: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w600, Colors.white),

@@ -39,7 +39,6 @@ dependencies:
   flutter_svg: ^2.0.17
   url_launcher: ^6.3.1
   timeline_tile: ^2.0.0
-  any_link_preview: ^3.0.3
   link_utils: ^0.0.2
 
 

@@ -1,4 +1,3 @@
-import 'package:any_link_preview/any_link_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:link_utils/link_utils.dart';
@@ -16,7 +15,6 @@ import 'package:portfolio/utils/strings.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../components/commons/link_preview.dart';
 
 class Thriwin extends StatefulWidget {
 

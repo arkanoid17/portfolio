@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:portfolio/utils/strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:html' as html;
@@ -16,6 +17,7 @@ class AppUtils{
     AppStrings.vajraPlaystore:'https://play.google.com/store/apps/details?id=com.adjointtechnologies.vajra&hl=en',
     AppStrings.galaxyPlayStore:'https://play.google.com/store/apps/details?id=com.adjointtechnologies.galaxy&hl=en',
     AppStrings.myschoolapp:'https://www.myschoolapp.in/',
+    AppStrings.resume:'https://drive.google.com/file/d/1ZnH0QZcSsTCs0Plqnj8XuqF3SgFBY7dT/view?usp=sharing',
   };
 
   static navigateToEmail()async{
@@ -61,5 +63,10 @@ class AppUtils{
       default:
         AppUtils.navigateToUrl(type);
     }
+  }
+
+  static void navigateToPdfViewer(BuildContext context){
+    // Navigator.push(context, PdfViewer.pdfViewerRoute());
+    navigateToUrl(AppStrings.resume);
   }
 }

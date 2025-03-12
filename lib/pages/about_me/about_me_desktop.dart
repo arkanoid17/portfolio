@@ -73,7 +73,7 @@ class AboutMeDesktop extends StatelessWidget {
                         Text(AppStrings.aboutMeDesc,style: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w400, Colors.black54)),
                         SizedBox(height: 20,),
                         AppIconButton(
-                            onPressed: ()=>{},
+                            onPressed: ()=>AppUtils.navigateToPdfViewer(context),
                             icon: Icons.library_books_outlined,
                             buttonText: AppStrings.resume,
                             buttonTextStyle: AppTheme.textStyle(AppDimensions.mediumFont, FontWeight.w600, Colors.white),
