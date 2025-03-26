@@ -18,9 +18,7 @@ class HomeDesktop extends StatelessWidget {
         children: [
           SideNav(selected: selected,onMenuOptionSelected: onMenuSelected,),
           //show component based on selected
-          Expanded(
-            child: getSelectedPage(),
-          ),
+          getSelectedPage(),
         ],
       ),
     );

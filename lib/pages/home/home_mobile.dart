@@ -25,9 +25,7 @@ class _HomeMobileState extends State<HomeMobile> {
       key: _scaffoldKey,
       appBar: AppBar(),
       drawer: SideNav(selected: widget.selected,onMenuOptionSelected: widget.onMenuSelected,scaffoldKey: _scaffoldKey,),
-      body: Expanded(
-        child: widget.getSelectedPage(),
-      ),
+      body: widget.getSelectedPage(),
     );
   }
 }

@@ -31,8 +31,7 @@ class AboutMeTablet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Flexible(
-                    flex: 2,
+                Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -82,14 +81,11 @@ class AboutMeTablet extends StatelessWidget {
                       ],
                     )
                 ),
-                SizedBox(width: 20,),
-                Flexible(
-                  flex: 1,
-                    child: Image.asset(
-                        width: 250,
-                        height: 250,
-                        "assets/images/me.jpeg"
-                    )
+                const SizedBox(width: 20,),
+                Image.asset(
+                    width: 250,
+                    height: 250,
+                    "assets/images/me.jpeg"
                 )
               ],
             ),
@@ -110,17 +106,15 @@ class AboutMeTablet extends StatelessWidget {
                   const SizedBox(height:20),
                   const SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Expanded(
-                      child: Row(
-                      children: [
-                        HoverElevatedCard(title: AppStrings.linkedin, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.linkedin, desc: AppStrings.careerInsights, image: "assets/images/ic_linked_in.svg")),
-                        SizedBox(width: 20,),
-                        HoverElevatedCard(title: AppStrings.github, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.github, desc: AppStrings.myProjects, image: "assets/images/ic_github.svg")),
-                        SizedBox(width: 20,),
-                        HoverElevatedCard(title: AppStrings.leetcode, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.leetcode, desc: AppStrings.problemSolver, image: "assets/images/ic_leetcode.svg")),
-                      ],
-                    ),
-                    )
+                    child: Row(
+                    children: [
+                      HoverElevatedCard(title: AppStrings.linkedin, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.linkedin, desc: AppStrings.careerInsights, image: "assets/images/ic_linked_in.svg")),
+                      SizedBox(width: 20,),
+                      HoverElevatedCard(title: AppStrings.github, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.github, desc: AppStrings.myProjects, image: "assets/images/ic_github.svg")),
+                      SizedBox(width: 20,),
+                      HoverElevatedCard(title: AppStrings.leetcode, onClicked: AppUtils.navigateSocials, view: SocialsCard(name: AppStrings.leetcode, desc: AppStrings.problemSolver, image: "assets/images/ic_leetcode.svg")),
+                    ],
+                                        )
                   )
                 ],
               ),
