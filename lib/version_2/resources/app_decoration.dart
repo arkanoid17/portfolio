@@ -73,4 +73,45 @@ class AppDecoration{
       fontWeight: FontWeight.normal,
       color: AppColors.greyText
   );
+
+  static const TextStyle sectionHeaderText = TextStyle(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      color: Colors.black
+  );
+
+  static var dateBg = BoxDecoration(
+    color: AppColors.dateColorBg,
+    borderRadius: BorderRadius.circular(20),
+  );
+
+  static var cardDecor = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(12),
+    boxShadow:  [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.2),
+        blurRadius: 8,
+        spreadRadius: 2,
+        offset: const Offset(0, 2),
+      ),
+    ],
+  );
+
+  static const dateTextStyle = TextStyle(
+    color: AppColors.dateColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const mediumBlackText = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const TextStyle smallCaptionGreyText = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: AppColors.greyText
+  );
 }

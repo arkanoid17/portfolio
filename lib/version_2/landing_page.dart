@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/version_2/pages/about_me.dart';
 import 'package:portfolio/pages/home/home.dart';
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/version_2/pages/home.dart';
@@ -27,6 +28,7 @@ class _LandingPageState extends State<LandingPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Home(),
+            AboutMe(),
           ],
         ),
       ),
