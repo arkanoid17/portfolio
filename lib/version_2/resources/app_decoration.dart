@@ -53,7 +53,15 @@ class AppDecoration{
       color: Colors.white
   );
 
+  static const TextStyle smallerWhiteText = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: Colors.white
+  );
+
   static const gradient =  LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
     colors: [AppColors.colorOne,AppColors.colorTwo,], // Define gradient colors
   );
 
@@ -70,6 +78,11 @@ class AppDecoration{
   );
   static const TextStyle smallGreyText = TextStyle(
       fontSize: 16,
+      fontWeight: FontWeight.normal,
+      color: AppColors.greyText
+  );
+  static const TextStyle smallerGreyText = TextStyle(
+      fontSize: 14,
       fontWeight: FontWeight.normal,
       color: AppColors.greyText
   );
@@ -139,5 +152,19 @@ class AppDecoration{
       color: Colors.grey.shade300,
       width: 1
     )
+  );
+
+  static const gradDecorLeft = BoxDecoration(
+    borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(12),
+        bottomLeft: Radius.circular(12),
+    ),
+    gradient: gradient
+  );
+
+  static const TextStyle largeWhite = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: Colors.white
   );
 }
