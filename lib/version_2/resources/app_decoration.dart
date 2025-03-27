@@ -167,4 +167,15 @@ class AppDecoration{
       fontWeight: FontWeight.bold,
       color: Colors.white
   );
+
+  static const TextStyle mobileSmallBlackText = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.normal,
+      color: AppColors.titleTextColor
+  );
+  static const TextStyle mobileMediumBlackTextBold = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: AppColors.titleTextColor
+  );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/version_2/components/projects_and_experience.dart';
-import 'package:portfolio/version_2/components/toolbar_buttons.dart';
+import 'package:portfolio/version_2/components/toolbar/toolbar_buttons.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 import 'package:portfolio/version_2/resources/app_dimensions.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';

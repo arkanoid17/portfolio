@@ -3,7 +3,7 @@ import 'package:portfolio/version_2/resources/app_decoration.dart';
 import 'package:portfolio/version_2/resources/app_dimensions.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
 import 'package:portfolio/version_2/components/gradient_button.dart';
-import 'package:portfolio/version_2/components/toolbar_buttons.dart';
+import 'package:portfolio/version_2/components/toolbar/toolbar_buttons.dart';
 
 
 class Toolbar extends StatelessWidget implements PreferredSizeWidget {

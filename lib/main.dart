@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/utils/strings.dart';
-import 'package:portfolio/version_2/landing_page.dart';
+import 'package:portfolio/version_2/pages/landing_page/landing_page.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 
 void main() {
