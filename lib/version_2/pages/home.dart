@@ -10,11 +10,15 @@ import 'package:portfolio/version_2/utils/app_utils.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+
+  final GlobalKey homeKey;
+
+  const Home( {super.key, required this.homeKey});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: homeKey,
       height: MediaQuery.of(context).size.height-AppDimensions.toolbarHeight,
       padding: EdgeInsets.only(
           left:MediaQuery.of(context).size.width*0.15,

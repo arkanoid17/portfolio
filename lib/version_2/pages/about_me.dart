@@ -17,7 +17,10 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 
 class AboutMe extends StatefulWidget {
-  const AboutMe({super.key});
+
+  final GlobalKey aboutMeKey;
+
+  const AboutMe({super.key, required this.aboutMeKey});
 
   @override
   State<AboutMe> createState() => _AboutMeState();
@@ -104,6 +107,7 @@ class _AboutMeState extends State<AboutMe> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: widget.aboutMeKey,
       // height: MediaQuery.of(context).size.height - AppDimensions.toolbarHeight,
       padding: EdgeInsets.all(20),
       width: double.infinity,

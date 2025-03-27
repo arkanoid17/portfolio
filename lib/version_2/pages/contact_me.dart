@@ -7,13 +7,14 @@ import 'package:portfolio/version_2/resources/app_strings.dart';
 
 class ContactMe extends StatelessWidget {
 
+  final GlobalKey contactKey;
 
-
-  const ContactMe({super.key});
+  const ContactMe({super.key, required this.contactKey});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: contactKey,
       padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.08,right:MediaQuery.of(context).size.width*0.08),
       width: double.infinity,
       height: MediaQuery.of(context).size.height-AppDimensions.toolbarHeight,

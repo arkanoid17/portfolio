@@ -4,13 +4,18 @@ import 'package:portfolio/version_2/model/project_model.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 
 class Projects extends StatefulWidget {
-  const Projects({super.key});
+
+  final GlobalKey projectsKey;
+
+  const Projects({super.key, required this.projectsKey});
 
   @override
   State<Projects> createState() => _ProjectsState();
 }
 
 class _ProjectsState extends State<Projects> {
+
+
 
   List<ProjectModel> projects = [];
 
@@ -66,6 +71,7 @@ class _ProjectsState extends State<Projects> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      key: widget.projectsKey,
       width: double.infinity,
       height: MediaQuery.of(context).size.height,
       child: Column(

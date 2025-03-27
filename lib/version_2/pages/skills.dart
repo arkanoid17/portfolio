@@ -6,7 +6,10 @@ import 'package:portfolio/version_2/resources/app_dimensions.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
 
 class Skills extends StatefulWidget {
-  const Skills({super.key});
+
+  final GlobalKey skillsKey;
+
+  const Skills({super.key, required this.skillsKey});
 
   @override
   State<Skills> createState() => _SkillsState();
@@ -24,6 +27,7 @@ class _SkillsState extends State<Skills> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: widget.skillsKey,
       padding: EdgeInsets.only(left: 20,right:20),
       width: double.infinity,
       height: MediaQuery.of(context).size.height-AppDimensions.toolbarHeight,
