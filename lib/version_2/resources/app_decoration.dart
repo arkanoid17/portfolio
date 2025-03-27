@@ -53,7 +53,15 @@ class AppDecoration{
       color: Colors.white
   );
 
+  static const TextStyle smallerWhiteText = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: Colors.white
+  );
+
   static const gradient =  LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
     colors: [AppColors.colorOne,AppColors.colorTwo,], // Define gradient colors
   );
 
@@ -72,5 +80,91 @@ class AppDecoration{
       fontSize: 16,
       fontWeight: FontWeight.normal,
       color: AppColors.greyText
+  );
+  static const TextStyle smallerGreyText = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: AppColors.greyText
+  );
+
+  static const TextStyle sectionHeaderText = TextStyle(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      color: Colors.black
+  );
+
+  static var dateBg = BoxDecoration(
+    color: AppColors.dateColorBg,
+    borderRadius: BorderRadius.circular(20),
+  );
+
+  static var cardDecor = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(12),
+    boxShadow:  [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.2),
+        blurRadius: 8,
+        spreadRadius: 2,
+        offset: const Offset(0, 2),
+      ),
+    ],
+  );
+
+  static const dateTextStyle = TextStyle(
+    color: AppColors.dateColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const mediumBlackText = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const semiMediumBlackText = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const TextStyle smallCaptionGreyText = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: AppColors.greyText
+  );
+
+  static const TextStyle largeColorOneText = TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w700,
+      color: AppColors.colorOne
+  );
+  static const TextStyle largeColorTwoText = TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w700,
+      color: AppColors.colorTwo
+  );
+
+  static var cardDecorLight = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(12),
+    border: Border.all(
+      color: Colors.grey.shade300,
+      width: 1
+    )
+  );
+
+  static const gradDecorLeft = BoxDecoration(
+    borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(12),
+        bottomLeft: Radius.circular(12),
+    ),
+    gradient: gradient
+  );
+
+  static const TextStyle largeWhite = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: Colors.white
   );
 }

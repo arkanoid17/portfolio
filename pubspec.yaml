@@ -41,6 +41,7 @@ dependencies:
   timeline_tile: ^2.0.0
   link_utils: ^0.0.2
   simple_gradient_text: ^1.3.0
+  visibility_detector: ^0.4.0+2
 
 
 dev_dependencies:
@@ -94,6 +95,8 @@ flutter:
     - assets/images/portfolio-5.png
     - assets/images/ic_github.png
     - assets/images/ic_linked_in.png
+    - assets/images/recipe_app_cover.png
+    - assets/images/portfolio_app_cover.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

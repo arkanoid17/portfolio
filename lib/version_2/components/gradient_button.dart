@@ -6,15 +6,16 @@ class GradientButton extends StatelessWidget {
 
   final String title;
   final Function onPressed;
+  final double? size;
 
-  const GradientButton({super.key, required this.title, required this.onPressed});
+  const GradientButton({super.key, required this.title, required this.onPressed, this.size});
 
 
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: ()=>onPressed(),
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.transparent, // Make button transparent
         shadowColor: Colors.transparent, // Remove shadow effect
@@ -27,7 +28,7 @@ class GradientButton extends StatelessWidget {
         ),
         child: Container(
           padding: const EdgeInsets.only(left:10,right: 10),
-          height: 30,
+          height: size??30,
           alignment: Alignment.center,
           child: Text(
             title,

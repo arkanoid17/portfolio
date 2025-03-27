@@ -102,7 +102,8 @@ class Cloudedz extends StatelessWidget {
                   padding: EdgeInsets.only(top:constraints==null?8.0:0.0),
                   child: ListTile(
                     visualDensity: const VisualDensity(vertical: -4),
-                    title: Text("Projects I worked on in this company.",style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
+                    title: Text("Projects I worked on in this company.",
+                      style: AppTheme.textStyle(AppDimensions.smallFont, FontWeight.w400, Colors.black),),
                     subtitle: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

@@ -9,8 +9,9 @@ import 'package:portfolio/version_2/components/toolbar_buttons.dart';
 class Toolbar extends StatelessWidget implements PreferredSizeWidget {
 
   final int selected;
+  final Function onOptionSelected;
 
-  const Toolbar({super.key, required this.selected});
+  const Toolbar({super.key, required this.selected, required this.onOptionSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +33,15 @@ class Toolbar extends StatelessWidget implements PreferredSizeWidget {
             const SizedBox(width: 10,),
             const Text("Arka",style: AppDecoration.toolbarText,),
             const Spacer(),
-            ToolbarButton(title: "Home", selected: selected, onPressed: _onButtonPressed, index: 1),
+            ToolbarButton(title: "Home", selected: selected, onPressed: onOptionSelected, index: 1),
             const SizedBox(width: 10,),
-            ToolbarButton(title: "About Me", selected: selected, onPressed: _onButtonPressed, index: 2),
+            ToolbarButton(title: "About Me", selected: selected, onPressed: onOptionSelected, index: 2),
             const SizedBox(width: 10,),
-            ToolbarButton(title: "Education", selected: selected, onPressed: _onButtonPressed, index: 3),
+            ToolbarButton(title: "Projects", selected: selected, onPressed: onOptionSelected, index: 3),
             const SizedBox(width: 10,),
-            ToolbarButton(title: "Projects", selected: selected, onPressed: _onButtonPressed, index: 4),
-            const SizedBox(width: 10,),
-            ToolbarButton(title: "Skills", selected: selected, onPressed: _onButtonPressed, index: 5),
+            ToolbarButton(title: "Skills", selected: selected, onPressed: onOptionSelected, index: 4),
             const Spacer(),
-            GradientButton(title: "Contact", onPressed: (){})
+            GradientButton(title: "Contact", onPressed: ()=>onOptionSelected(5))
           ],
         ),
       ),
@@ -54,9 +53,7 @@ class Toolbar extends StatelessWidget implements PreferredSizeWidget {
     );
 
   }
-  _onButtonPressed(index){
 
-  }
 
 
 
