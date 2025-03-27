@@ -11,6 +11,7 @@ import 'package:portfolio/version_2/pages/skills.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
 import 'package:portfolio/version_2/components/toolbar.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -32,16 +33,24 @@ class _LandingPageState extends State<LandingPage> {
   void _scrollToTarget(key) {
     Scrollable.ensureVisible(
       key.currentContext!,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
   }
 
-  _onToolbarOptionPressed(index) {
-    setState(() {
-      selected = index;
-    });
+  setSelectedToolbar(index) {
+    if(selected!=index){
+      setState(() {
+        selected = index;
+      });
+    }
+  }
 
+  _onToolbarOptionPressed(index) {
+    _handleScrollToPage(index);
+  }
+
+  _handleScrollToPage(index) {
     if (index == 1) {
       _scrollToTarget(_homeKey);
     }
@@ -58,6 +67,14 @@ class _LandingPageState extends State<LandingPage> {
       _scrollToTarget(_contactKey);
     }
   }
+  _onVisibilityChanged(info,index){
+    if (info.visibleFraction > 0.5)
+    {
+      if(index!=selected){
+        setSelectedToolbar(index);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,21 +88,45 @@ class _LandingPageState extends State<LandingPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Home(
-              homeKey: _homeKey,
+            VisibilityDetector(
+                key: _homeKey,
+                child: Home(
+                  homeKey: _homeKey,
+                ),
+                onVisibilityChanged: (info) =>_onVisibilityChanged(info, 1)
             ),
-            AboutMe(
-              aboutMeKey: _aboutMeKey,
+
+            VisibilityDetector(
+                key: _aboutMeKey,
+                child:AboutMe(
+                  aboutMeKey: _aboutMeKey,
+                ),
+                onVisibilityChanged: (info) =>_onVisibilityChanged(info, 2)
             ),
-            Projects(
-              projectsKey: _projectsKey,
+
+
+            VisibilityDetector(
+                key: _projectsKey,
+                child: Projects(
+                  projectsKey: _projectsKey,
+                ),
+                onVisibilityChanged: (info) =>_onVisibilityChanged(info, 3)
             ),
-            Skills(
-              skillsKey: _skillsKey,
+            VisibilityDetector(
+                key: _skillsKey,
+                child: Skills(
+                  skillsKey: _skillsKey,
+                ),
+                onVisibilityChanged: (info) =>_onVisibilityChanged(info, 4)
             ),
-            ContactMe(
-              contactKey: _contactKey,
+            VisibilityDetector(
+                key: _contactKey,
+                child: ContactMe(
+                  contactKey: _contactKey,
+                ),
+                onVisibilityChanged: (info) =>_onVisibilityChanged(info, 5)
             ),
+
             const Footer(),
           ],
         ),
