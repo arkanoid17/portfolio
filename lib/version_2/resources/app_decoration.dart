@@ -109,9 +109,35 @@ class AppDecoration{
     color: Colors.black,
   );
 
+  static const semiMediumBlackText = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
   static const TextStyle smallCaptionGreyText = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.normal,
       color: AppColors.greyText
+  );
+
+  static const TextStyle largeColorOneText = TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w700,
+      color: AppColors.colorOne
+  );
+  static const TextStyle largeColorTwoText = TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w700,
+      color: AppColors.colorTwo
+  );
+
+  static var cardDecorLight = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(12),
+    border: Border.all(
+      color: Colors.grey.shade300,
+      width: 1
+    )
   );
 }

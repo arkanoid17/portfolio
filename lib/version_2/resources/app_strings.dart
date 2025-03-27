@@ -1,6 +1,7 @@
 class AppStrings{
   static const menuOptions = ["Home","About Me","Education","Projects"];
   static const aboutMeDesc = "Hi, I am seasoned developer familiar with Mobile development technologies like Android, flutter but also well versed in backend with python, Django  and MySQL. I am currently working for Thriwin.io as a software developer. Welcome to my personal website and explore my work, skills and feel free to reach out. Thank you.";
+  static const String skillDesc = "Hi, I have garnered a lot of skills over the years in my career as a developer. Here are few skills that I have acquired . I still wish to pick up more skills and increase my proficiency over the existing ones going forward.\n\nAlso I have used my skills across multiple companies to work on live products also passion projects which I'm grateful for";
 
   static const String url_linkedin = "https://www.linkedin.com/in/arkaprabha-mahata-4b2aa8129/";
   static const String url_github = "https://github.com/arkanoid17";

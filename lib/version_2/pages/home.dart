@@ -16,7 +16,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height-AppDimensions.toolbarHeight,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.only(
+          left:MediaQuery.of(context).size.width*0.15,
+          right:MediaQuery.of(context).size.width*0.15
+      ),
       width: double.infinity,
       child: Center(
         child: Column(

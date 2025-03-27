@@ -152,36 +152,6 @@ class _AboutMeState extends State<AboutMe> {
             ],
           )
 
-          // Column(
-          //   children: [
-          //     Row(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: [
-          //
-          //         GradientDot(),
-          //         EducationCard(work: work[0],)
-          //       ],
-          //     ),
-          //
-          //     Row(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: [
-          //         GradientDot(),
-          //         EducationCard(work: work[1],),
-          //       ],
-          //     ),
-          //     Row(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: [
-          //         GradientDot(),
-          //         EducationCard(work: work[2],),
-          //       ],
-          //     ),
-          //   ],
-          // )
         ],
       ),
     );

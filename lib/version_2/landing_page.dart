@@ -3,6 +3,8 @@ import 'package:portfolio/version_2/pages/about_me.dart';
 import 'package:portfolio/pages/home/home.dart';
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/version_2/pages/home.dart';
+import 'package:portfolio/version_2/pages/projects.dart';
+import 'package:portfolio/version_2/pages/skills.dart';
 
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
@@ -29,6 +31,8 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             Home(),
             AboutMe(),
+            Projects(),
+            Skills()
           ],
         ),
       ),

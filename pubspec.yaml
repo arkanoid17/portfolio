@@ -94,6 +94,8 @@ flutter:
     - assets/images/portfolio-5.png
     - assets/images/ic_github.png
     - assets/images/ic_linked_in.png
+    - assets/images/recipe_app_cover.png
+    - assets/images/portfolio_app_cover.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
