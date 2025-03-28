@@ -51,7 +51,7 @@ class ProjectCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     project.subtitle,
-                    style: AppDecoration.smallGreyText,
+                    style: AppDecoration.smallGreyText["desktop"],
                   ),
                   const SizedBox(height: 12),
                   // Tech Stack Tags

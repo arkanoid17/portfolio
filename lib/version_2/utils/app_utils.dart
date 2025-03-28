@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/dimensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:html' as html;
 
@@ -44,6 +45,7 @@ class AppUtils{
         );
       },
     );
-
   }
+
+  static  String getDevice(BoxConstraints constraints) => constraints.maxWidth<=AppDimensions.mobile?"mobile": constraints.maxWidth<=AppDimensions.tablet?"tablet":"desktop";
 }

@@ -36,7 +36,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         // errorText: widget.errorText,
         hintText: widget.hint,
-        hintStyle: AppDecoration.smallGreyText,
+        hintStyle: AppDecoration.smallGreyText["desktop"],
         border: OutlineInputBorder(
          borderRadius: BorderRadius.circular(12),
          borderSide: BorderSide(

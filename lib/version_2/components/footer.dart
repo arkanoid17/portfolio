@@ -28,9 +28,9 @@ class Footer extends StatelessWidget {
               )
           ),
           const SizedBox(width: 10,),
-          const Text("Arka",style: AppDecoration.mediumBlackText,),
+           Text("Arka",style: AppDecoration.mediumBlackText["desktop"],),
           Spacer(),
-          Text('© 2025 Arkaprabha Mahata. All rights reserved.',style: AppDecoration.smallGreyText,),
+          Text('© 2025 Arkaprabha Mahata. All rights reserved.',style: AppDecoration.smallGreyText["desktop"],),
           Spacer(),
           Row(
             children: [

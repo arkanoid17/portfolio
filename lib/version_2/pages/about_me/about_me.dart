@@ -106,10 +106,12 @@ class _AboutMeState extends State<AboutMe> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+
+    return LayoutBuilder(
+        builder: (ctx,constraints)=>Container(
       key: widget.aboutMeKey,
       // height: MediaQuery.of(context).size.height - AppDimensions.toolbarHeight,
-      padding: EdgeInsets.all(20),
+      padding: _getPadding(constraints),
       width: double.infinity,
       child: Column(
         children: [
@@ -117,8 +119,8 @@ class _AboutMeState extends State<AboutMe> {
           const SizedBox(
             height: 10,
           ),
-          const Text("Software Developer",style: AppDecoration.sectionHeaderText,),
-          const Text("Below is depicted my journey across my 6 year long career.",style: AppDecoration.smallGreyText,),
+          Text("Software Developer",style: AppDecoration.sectionHeaderText[AppUtils.getDevice(constraints)],),
+          Text("Below is depicted my journey across my 6 year long career.",style: AppDecoration.smallGreyText[AppUtils.getDevice(constraints)],),
           const SizedBox(
             height: 20,
           ),
@@ -127,6 +129,8 @@ class _AboutMeState extends State<AboutMe> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              constraints.maxWidth<AppDimensions.mobile || constraints.maxWidth<AppDimensions.tablet?
+              SizedBox() :
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -148,9 +152,9 @@ class _AboutMeState extends State<AboutMe> {
               ),
               Column(
                 children: [
-                  EducationCard(work: work[0]),
-                  EducationCard(work: work[1]),
-                  EducationCard(work: work[2]),
+                  EducationCard(work: work[0],constraints: constraints,),
+                  EducationCard(work: work[1],constraints: constraints,),
+                  EducationCard(work: work[2],constraints: constraints,),
                 ],
               )
             ],
@@ -158,6 +162,11 @@ class _AboutMeState extends State<AboutMe> {
 
         ],
       ),
+    )
     );
+  }
+
+  _getPadding(BoxConstraints constraints){
+    return EdgeInsets.all(constraints.maxWidth<AppDimensions.mobile?AppDimensions.mobilePagePadding:AppDimensions.tabletPagePadding);
   }
 }

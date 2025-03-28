@@ -81,8 +81,8 @@ class _ProjectsState extends State<Projects> {
           const SizedBox(
             height: 10,
           ),
-          const Text("My projects",style: AppDecoration.sectionHeaderText,),
-          const Text("Below is depicted my projects that built throughot my career.",style: AppDecoration.smallGreyText,),
+           Text("My projects",style: AppDecoration.sectionHeaderText["desktop"],),
+          Text("Below is depicted my projects that built throughot my career.",style: AppDecoration.smallGreyText["desktop"],),
           const SizedBox(
             height: 20,
           ),

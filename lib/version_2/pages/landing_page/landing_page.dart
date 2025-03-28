@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/version_2/components/footer.dart';
 import 'package:portfolio/version_2/components/toolbar/toolbar_mobile.dart';
-import 'package:portfolio/version_2/pages/about_me.dart';
+import 'package:portfolio/version_2/pages/about_me/about_me.dart';
 import 'package:portfolio/pages/home/home.dart';
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/version_2/pages/contact_me.dart';
-import 'package:portfolio/version_2/pages/home.dart';
+import 'package:portfolio/version_2/pages/home/home.dart';
 import 'package:portfolio/version_2/pages/projects.dart';
 import 'package:portfolio/version_2/pages/skills.dart';
 
@@ -54,7 +54,6 @@ class _LandingPageState extends State<LandingPage> {
       MediaQuery.of(context).size.width<AppDimensions.mobile || MediaQuery.of(context).size.width<AppDimensions.tablet
     ){
       Navigator.pop(context);
-      
     }
   }
 

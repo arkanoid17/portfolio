@@ -38,8 +38,8 @@ class _SkillsState extends State<Skills> {
           const SizedBox(
             height: 10,
           ),
-          const Text("My Skills",style: AppDecoration.sectionHeaderText,),
-          const Text("Below is depicted my skills that I acquired throughot my career.",style: AppDecoration.smallGreyText,),
+           Text("My Skills",style: AppDecoration.sectionHeaderText["desktop"],),
+           Text("Below is depicted my skills that I acquired throughot my career.",style: AppDecoration.smallGreyText["desktop"],),
           const SizedBox(
             height: 40,
           ),
@@ -49,8 +49,8 @@ class _SkillsState extends State<Skills> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("My History",style: AppDecoration.mediumBlackText,),
-                      Text(AppStrings.skillDesc,style: AppDecoration.smallGreyText,),
+                      Text("My History",style: AppDecoration.mediumBlackText["desktop"],),
+                      Text(AppStrings.skillDesc,style: AppDecoration.smallGreyText["desktop"],),
                       const SizedBox(height: 20,),
                       Row(
 
@@ -89,7 +89,7 @@ class _SkillsState extends State<Skills> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("",style: AppDecoration.mediumBlackText,),
+                        Text("",style: AppDecoration.mediumBlackText["desktop"],),
                         const SizedBox(
                           height: 20,
                         ),

@@ -25,8 +25,8 @@ class ContactMe extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Text("My Contact",style: AppDecoration.sectionHeaderText,),
-          const Text("Interested in working together or have any questions?",style: AppDecoration.smallGreyText,),
+           Text("My Contact",style: AppDecoration.sectionHeaderText["desktop"],),
+           Text("Interested in working together or have any questions?",style: AppDecoration.smallGreyText["desktop"],),
           const SizedBox(
             height: 40,
           ),
