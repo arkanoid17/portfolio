@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
+import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/version_2/components/project_card.dart';
 import 'package:portfolio/version_2/model/project_model.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
+import 'package:portfolio/version_2/utils/app_utils.dart';
 
 class Projects extends StatefulWidget {
 
-  final GlobalKey projectsKey;
+  final GlobalKey projectsKey = GlobalKey();
 
-  const Projects({super.key, required this.projectsKey});
+  Projects({super.key});
 
   @override
   State<Projects> createState() => _ProjectsState();
@@ -70,35 +73,65 @@ class _ProjectsState extends State<Projects> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      key: widget.projectsKey,
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Chip(label: Text("Projects",style: AppDecoration.smallChipText,)),
-          const SizedBox(
-            height: 10,
-          ),
-           Text("My projects",style: AppDecoration.sectionHeaderText["desktop"],),
-          Text("Below is depicted my projects that built throughot my career.",style: AppDecoration.smallGreyText["desktop"],),
-          const SizedBox(
-            height: 20,
-          ),
+    return LayoutBuilder(
+        builder: (ctx,constraints){
+          return SizedBox(
+            key: widget.projectsKey,
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Chip(label: Text("Projects",style: AppDecoration.smallChipText,)),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text("My projects",style: AppDecoration.sectionHeaderText[AppUtils.getDevice(constraints)],),
+                Text("Below is depicted my projects that built throughot my career.",style: AppDecoration.smallGreyText[AppUtils.getDevice(constraints)],),
+                const SizedBox(
+                  height: 20,
+                ),
+                _getProjectsLayout(constraints)
 
-         SizedBox(
-           height: 320,
-           child:  ListView.builder(
-               scrollDirection: Axis.horizontal,
-               itemCount: projects.length,
-               itemBuilder:
-                   (ctx,index)=>ProjectCard(project: projects[index],)
-           ),
-         )
 
-        ],
-      ),
+              ],
+            ),
+          );
+        }
     );
+  }
+
+
+  _getProjectsLayout(BoxConstraints constraints){
+    if(constraints.maxWidth<AppDimensions.mobile){
+      return FlutterCarousel(
+        options: FlutterCarouselOptions(
+          height: 400.0,
+          showIndicator: true,
+          indicatorMargin: 10,
+          slideIndicator: CircularSlideIndicator(),
+        ),
+        items: projects.map((project) {
+          return Builder(
+            builder: (BuildContext context) {
+              return ProjectCard(project: project);
+            },
+          );
+        }).toList(),
+      );
+
+
+
+    }else{
+      return  SizedBox(
+        height: 320,
+        child:  ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: projects.length,
+            itemBuilder:
+                (ctx,index)=>ProjectCard(project: projects[index],)
+        ),
+      );
+    }
   }
 }

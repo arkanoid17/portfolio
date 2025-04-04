@@ -18,9 +18,9 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class AboutMe extends StatefulWidget {
 
-  final GlobalKey aboutMeKey;
+  final aboutMeKey = GlobalKey();
 
-  const AboutMe({super.key, required this.aboutMeKey});
+  AboutMe({super.key});
 
   @override
   State<AboutMe> createState() => _AboutMeState();

@@ -35,42 +35,54 @@ class Footer extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                child: SvgPicture.asset(
-                    width: 30,
-                    height: 30,
-                    "assets/images/ic_github.svg"
+                hoverColor: Colors.transparent,
+                child: Container(
+                  width: 35,
+                  height: 35,
+                  decoration: AppDecoration.circleGrey,
+                  padding: const EdgeInsets.all(5),
+                  child: Image.asset(
+                      width: 30,
+                      height: 30,
+                      "assets/images/ic_github.png"
+                  ),
                 ),
                 onTap: ()=>AppUtils.navigateToUrl(AppStrings.url_github),
               ),
               const SizedBox(width: 20,),
               InkWell(
-                child: SvgPicture.asset(
-                    width: 35,
-                    height: 35,
-                    "assets/images/ic_linked_in.svg"
+                hoverColor: Colors.transparent,
+                child: Container(
+                  width: 35,
+                  height: 35,
+                  decoration: AppDecoration.circleGrey,
+                  padding: const EdgeInsets.all(8),
+                  child: Image.asset(
+                      width: 30,
+                      height: 30,
+                      "assets/images/ic_linkedin.png"
+                  ),
                 ),
                 onTap: ()=>AppUtils.navigateToUrl(AppStrings.url_linkedin),
               ),
               const SizedBox(width: 20,),
-              InkWell(
-                child: SvgPicture.asset(
-                    width: 30,
-                    height: 30,
-                    "assets/images/ic_leetcode.svg"
+              Container(
+                width: 35,
+                height: 35,
+                decoration: AppDecoration.circleGrey,
+                padding: const EdgeInsets.all(5),
+                child: InkWell(
+                  hoverColor: Colors.transparent,
+                  child: Image.asset(
+                      width: 30,
+                      height: 30,
+                      "assets/images/ic_leetcode.png"
+                  ),
+                  onTap: ()=>AppUtils.navigateToUrl(AppStrings.url_leetcode),
                 ),
-                onTap: ()=>AppUtils.navigateToUrl(AppStrings.url_leetcode),
-              ),
-              const SizedBox(width: 20,),
-              InkWell(
-                child: SvgPicture.asset(
-                    width: 30,
-                    height: 30,
-                    "assets/images/ic_gmail.svg"
-                ),
-                onTap: ()=>AppUtils.navigateToEmail(),
               )
             ],
-          ),
+          )
         ],
       ),
     );

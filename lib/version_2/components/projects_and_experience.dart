@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/version_2/components/gradient_dot.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
+import 'package:portfolio/version_2/resources/app_dimensions.dart';
+import 'package:portfolio/version_2/utils/app_utils.dart';
 
 class ProjectsAndExperience extends StatelessWidget {
 
   final String title;
+  final BoxConstraints constraints;
 
-  const ProjectsAndExperience({super.key, required this.title});
+  const ProjectsAndExperience({super.key, required this.title, required this.constraints});
 
   @override
   Widget build(BuildContext context) {
+    return _getDeviceCard();
+  }
+
+  _getDeviceCard(){
+    if(constraints.maxWidth<AppDimensions.mobile){
+      return Container(
+        padding: const EdgeInsets.all(10),
+        decoration: AppDecoration.cardDecorLight,
+        child: Text(title,style: AppDecoration.smallBlackText,),
+      );
+    }
+
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: AppDecoration.cardDecorLight,

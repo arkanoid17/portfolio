@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:portfolio/theme/app_theme.dart';
@@ -5,7 +6,12 @@ import 'package:portfolio/utils/strings.dart';
 import 'package:portfolio/version_2/pages/landing_page/landing_page.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

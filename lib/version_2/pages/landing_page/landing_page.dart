@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/version_2/components/footer.dart';
@@ -5,10 +6,10 @@ import 'package:portfolio/version_2/components/toolbar/toolbar_mobile.dart';
 import 'package:portfolio/version_2/pages/about_me/about_me.dart';
 import 'package:portfolio/pages/home/home.dart';
 import 'package:portfolio/theme/app_theme.dart';
-import 'package:portfolio/version_2/pages/contact_me.dart';
+import 'package:portfolio/version_2/pages/contact/contact_me.dart';
 import 'package:portfolio/version_2/pages/home/home.dart';
-import 'package:portfolio/version_2/pages/projects.dart';
-import 'package:portfolio/version_2/pages/skills.dart';
+import 'package:portfolio/version_2/pages/projects/projects.dart';
+import 'package:portfolio/version_2/pages/skills/skills.dart';
 
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
@@ -24,11 +25,13 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   final ScrollController _scrollController = ScrollController();
-  final GlobalKey _homeKey = GlobalKey();
-  final GlobalKey _aboutMeKey = GlobalKey();
-  final GlobalKey _skillsKey = GlobalKey();
-  final GlobalKey _projectsKey = GlobalKey();
-  final GlobalKey _contactKey = GlobalKey();
+
+  var home = Home();
+  var aboutMe = AboutMe();
+  var skills = Skills();
+  var projects = Projects();
+  var contact = ContactMe();
+
 
   int selected = 1;
 
@@ -59,19 +62,19 @@ class _LandingPageState extends State<LandingPage> {
 
   _handleScrollToPage(index) {
     if (index == 1) {
-      _scrollToTarget(_homeKey);
+      _scrollToTarget(home.homeKey);
     }
     if (index == 2) {
-      _scrollToTarget(_aboutMeKey);
+      _scrollToTarget(aboutMe.aboutMeKey);
     }
     if (index == 3) {
-      _scrollToTarget(_projectsKey);
+      _scrollToTarget(projects.projectsKey);
     }
     if (index == 4) {
-      _scrollToTarget(_skillsKey);
+      _scrollToTarget(skills.skillsKey);
     }
     if (index == 5) {
-      _scrollToTarget(_contactKey);
+      _scrollToTarget(contact.contactKey);
     }
   }
 
@@ -94,41 +97,31 @@ class _LandingPageState extends State<LandingPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     VisibilityDetector(
-                        key: _homeKey,
-                        child: Home(
-                          homeKey: _homeKey,
-                        ),
+                        key: GlobalKey(),
+                        child: home,
                         onVisibilityChanged: (info) =>
                             _onVisibilityChanged(info, 1)),
                     VisibilityDetector(
-                        key: _aboutMeKey,
-                        child: AboutMe(
-                          aboutMeKey: _aboutMeKey,
-                        ),
+                        key: GlobalKey(),
+                        child: aboutMe,
                         onVisibilityChanged: (info) =>
                             _onVisibilityChanged(info, 2)),
                     VisibilityDetector(
-                        key: _projectsKey,
-                        child: Projects(
-                          projectsKey: _projectsKey,
-                        ),
+                        key: GlobalKey(),
+                        child: projects,
                         onVisibilityChanged: (info) =>
                             _onVisibilityChanged(info, 3)),
                     VisibilityDetector(
-                        key: _skillsKey,
-                        child: Skills(
-                          skillsKey: _skillsKey,
-                        ),
+                        key: GlobalKey(),
+                        child: skills,
                         onVisibilityChanged: (info) =>
                             _onVisibilityChanged(info, 4)),
                     VisibilityDetector(
-                        key: _contactKey,
-                        child: ContactMe(
-                          contactKey: _contactKey,
-                        ),
+                        key: GlobalKey(),
+                        child: contact,
                         onVisibilityChanged: (info) =>
                             _onVisibilityChanged(info, 5)),
-                    const Footer(),
+                    constraints.maxWidth<AppDimensions.mobile||constraints.maxWidth<AppDimensions.tablet?SizedBox():Footer(),
                   ],
                 ),
               ),

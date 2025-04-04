@@ -39,6 +39,11 @@ class AppDecoration {
       fontWeight: FontWeight.normal,
       color: AppColors.titleTextColor);
 
+  static const TextStyle smallMobileBlackText = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.normal,
+      color: AppColors.titleTextColor);
+
   static const TextStyle smallSelectedText = TextStyle(
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColors.colorOne);
 
@@ -61,8 +66,7 @@ class AppDecoration {
       fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.colorOne);
 
 
-  static const TextStyle smallerGreyText = TextStyle(
-      fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.greyText);
+
 
 
 
@@ -92,10 +96,7 @@ class AppDecoration {
     color: Colors.black,
   );
 
-  static const TextStyle largeColorOneText = TextStyle(
-      fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.colorOne);
-  static const TextStyle largeColorTwoText = TextStyle(
-      fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.colorTwo);
+
 
   static var cardDecorLight = BoxDecoration(
       color: Colors.white,
@@ -109,13 +110,21 @@ class AppDecoration {
       ),
       gradient: gradient);
 
-  static const TextStyle largeWhite =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white);
+  static const gradDecorTop = BoxDecoration(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(12),
+        topRight: Radius.circular(12),
+      ),
+      gradient: gradient);
+
+
 
   static const TextStyle mobileSmallBlackText = TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.normal,
-      color: AppColors.titleTextColor);
+      color: AppColors.titleTextColor
+  );
+
   static const TextStyle mobileMediumBlackTextBold = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.bold,
@@ -186,7 +195,15 @@ class AppDecoration {
     )
   };
 
+  static var circleWhite = BoxDecoration(
+      borderRadius: BorderRadius.circular(30),
+      color: Colors.white.withOpacity(0.4)
+  );
 
+  static var circleGrey = BoxDecoration(
+      borderRadius: BorderRadius.circular(35),
+      color: Colors.grey.shade400.withOpacity(0.4)
+  );
 
   static const Map<String, TextStyle> dateTextStyle = {
     "mobile": TextStyle(
@@ -201,6 +218,52 @@ class AppDecoration {
     "desktop": TextStyle(
       color: AppColors.dateColor,
       fontWeight: FontWeight.bold,
+    )
+  };
+
+
+  static const Map<String, TextStyle> largeColorOneText = {
+    "mobile": TextStyle(
+        fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.colorOne
+    ),
+    "tablet":TextStyle(
+        fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.colorOne
+    ),
+    "desktop": TextStyle(
+        fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.colorOne
+    )
+  };
+
+  static const Map<String, TextStyle> largeColorTwoText = {
+    "mobile": TextStyle(
+        fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.colorTwo
+    ),
+    "tablet":TextStyle(
+        fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.colorTwo
+    ),
+    "desktop": TextStyle(
+        fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.colorTwo
+    )
+  };
+
+
+
+  static const Map<String, TextStyle> largeWhite = {
+    "mobile": TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+    "tablet":TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+    "desktop": TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)
+  };
+
+
+  static const Map<String, TextStyle> smallerGreyText = {
+    "mobile": TextStyle(
+        fontSize: 12, fontWeight: FontWeight.normal, color: AppColors.greyText
+    ),
+    "tablet":TextStyle(
+        fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.greyText
+    ),
+    "desktop": TextStyle(
+        fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.greyText
     )
   };
 }
