@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/version_2/pages/home/home_user_details.dart';
@@ -13,14 +14,14 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class Home extends StatelessWidget {
 
-  // final GlobalKey homeKey;
-
   final GlobalKey homeKey = GlobalKey();
 
    Home( {super.key});
 
   @override
   Widget build(BuildContext context) {
+
+
 
     return LayoutBuilder(
         builder: (context,constraints)=>Container(

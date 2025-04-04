@@ -14,4 +14,6 @@ class AppStrings{
   static const String url_galaxyPlayStore = 'https://play.google.com/store/apps/details?id=com.adjointtechnologies.galaxy&hl=en';
   static const String url_myschoolapp = 'https://www.myschoolapp.in/';
   static const String url_resume = 'https://drive.google.com/file/d/1ZnH0QZcSsTCs0Plqnj8XuqF3SgFBY7dT/view?usp=sharing';
+
+  static var portfolio="Portfolio";
 }

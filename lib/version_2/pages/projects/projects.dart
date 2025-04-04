@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
-import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/version_2/components/project_card.dart';
 import 'package:portfolio/version_2/model/project_model.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
+import 'package:portfolio/version_2/resources/app_dimensions.dart';
 import 'package:portfolio/version_2/utils/app_utils.dart';
 
 class Projects extends StatefulWidget {

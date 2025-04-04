@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/pages/work_experience/components/thriwin.dart';
 import 'package:portfolio/version_2/components/education_card.dart';
 import 'package:portfolio/version_2/components/gradient_dot.dart';
 import 'package:portfolio/version_2/model/work/work.dart';

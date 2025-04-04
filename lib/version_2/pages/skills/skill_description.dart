@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
+import 'package:portfolio/version_2/resources/app_dimensions.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
 import 'package:portfolio/version_2/utils/app_utils.dart';
 

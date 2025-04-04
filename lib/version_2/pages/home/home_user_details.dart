@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'package:portfolio/version_2/components/gradient_button.dart';
@@ -43,7 +44,10 @@ class HomeUserDetails extends StatelessWidget {
           children: [
             GradientButton(title: "View projects", onPressed: (){}),
             const SizedBox(width: 20,),
-            OutlinedButton(onPressed: (){}, child: Text("View CV",style: AppDecoration.smallBlackText,))
+            OutlinedButton(
+                onPressed: () => AppUtils.navigateToUrl("https://firebasestorage.googleapis.com/v0/b/recipe-app-910bd.appspot.com/o/ARKAPRABHA_RESUME.pdf?alt=media&token=92a13d45-d208-4131-b426-352931fb4796"),
+                child: Text("View CV",style: AppDecoration.smallBlackText,)
+            )
           ],
         )
       ],
@@ -62,3 +66,5 @@ class HomeUserDetails extends StatelessWidget {
 
   get _getIntroTextSize => constraints.maxWidth<AppDimensions.mobile?AppDecoration.nameText['mobile']:AppDecoration.nameText['desktop'];
 }
+
+

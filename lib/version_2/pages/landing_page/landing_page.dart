@@ -1,17 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/dimensions.dart';
 import 'package:portfolio/version_2/components/footer.dart';
 import 'package:portfolio/version_2/components/toolbar/toolbar_mobile.dart';
 import 'package:portfolio/version_2/pages/about_me/about_me.dart';
-import 'package:portfolio/pages/home/home.dart';
-import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/version_2/pages/contact/contact_me.dart';
 import 'package:portfolio/version_2/pages/home/home.dart';
 import 'package:portfolio/version_2/pages/projects/projects.dart';
 import 'package:portfolio/version_2/pages/skills/skills.dart';
 
 import 'package:portfolio/version_2/resources/app_decoration.dart';
+import 'package:portfolio/version_2/resources/app_dimensions.dart';
 import 'package:portfolio/version_2/resources/app_strings.dart';
 import 'package:portfolio/version_2/components/toolbar/toolbar.dart';
 import 'package:visibility_detector/visibility_detector.dart';
