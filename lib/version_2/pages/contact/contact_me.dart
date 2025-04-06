@@ -49,7 +49,6 @@ class ContactMe extends StatelessWidget {
     if(constraints.maxWidth<AppDimensions.mobile){
       return Column(
         children: [
-          ContactLinks(constraints: constraints),
           Padding(
             padding: EdgeInsets.all(10),
             child: ContactForm(constraints: constraints,),

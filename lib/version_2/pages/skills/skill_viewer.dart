@@ -17,66 +17,66 @@ class SkillViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("",style: AppDecoration.mediumBlackText[AppUtils.getDevice(constraints)],),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: EdgeInsets.all(5),
-            decoration: AppDecoration.cardDecorLight,
-            child: Row(
-              children: [
-                Expanded(
-                    child: SkillMenuButton(
-                        title: "Frontend",
-                        selected: selected,
-                        onPressed: onTabChanged,
-                        index: 1
-                    )
-                ),
-                const SizedBox(width: 20,),
-                Expanded(
+
+
+    return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("",style: AppDecoration.mediumBlackText[AppUtils.getDevice(constraints)],),
+        const SizedBox(
+          height: 20,
+        ),
+        Container(
+          padding: EdgeInsets.all(5),
+          decoration: AppDecoration.cardDecorLight,
+          child: Row(
+            children: [
+              Expanded(
                   child: SkillMenuButton(
-                      title: "Backend",
+                      title: "Frontend",
                       selected: selected,
                       onPressed: onTabChanged,
-                      index: 2
-                  ),
-                ),
-                const SizedBox(width: 20,),
-                Expanded(
-                  child: SkillMenuButton(
-                      title: "Software",
-                      selected: selected,
-                      onPressed: onTabChanged,
-                      index: 3
-                  ),
-                )
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            height: 250,
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: _getAxisCount(), // Number of columns
-                crossAxisSpacing: 10, // Space between columns
-                mainAxisSpacing: 10, // Space between rows
-                childAspectRatio: 4, // Aspect ratio of grid items
+                      index: 1
+                  )
               ),
-              itemBuilder: (context,index)=>ProjectsAndExperience(title: skills[selected]![index],constraints: constraints,),
-              itemCount: skills[selected]?.length,
+              const SizedBox(width: 20,),
+              Expanded(
+                child: SkillMenuButton(
+                    title: "Backend",
+                    selected: selected,
+                    onPressed: onTabChanged,
+                    index: 2
+                ),
+              ),
+              const SizedBox(width: 20,),
+              Expanded(
+                child: SkillMenuButton(
+                    title: "Software",
+                    selected: selected,
+                    onPressed: onTabChanged,
+                    index: 3
+                ),
+              )
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        SizedBox(
+          height: 250,
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: _getAxisCount(), // Number of columns
+              crossAxisSpacing: 10, // Space between columns
+              mainAxisSpacing: 10, // Space between rows
+              childAspectRatio: 4, // Aspect ratio of grid items
             ),
-          )
-        ],
-      ),
+            itemBuilder: (context,index)=>ProjectsAndExperience(title: skills[selected]![index],constraints: constraints,),
+            itemCount: skills[selected]?.length,
+          ),
+        )
+      ],
     );
   }
 

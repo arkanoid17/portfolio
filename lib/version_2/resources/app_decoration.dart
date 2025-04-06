@@ -266,4 +266,10 @@ class AppDecoration {
         fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.greyText
     )
   };
+
+  static const largeBlackText = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: Colors.black
+  );
 }

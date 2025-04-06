@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/version_2/pages/project_display/project_display.dart';
+import 'package:portfolio/version_2/components/tech_stack_chip.dart';
 import 'package:portfolio/version_2/model/project_model.dart';
 import 'package:portfolio/version_2/resources/app_decoration.dart';
 import 'package:portfolio/version_2/resources/app_dimensions.dart';
@@ -12,82 +14,63 @@ class ProjectCard extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Container(
-        width: _getWidth(context),
-        height: _getHeight(context),
-        decoration:AppDecoration.cardDecor,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Placeholder for the image
-            Container(
-              height: 160,
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-                child: Image.asset(
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                    project.coverImage
+    return GestureDetector(
+      onTap: () => Navigator.push(context, ProjectDisplay.route(project)),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Container(
+          decoration:AppDecoration.cardDecor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Placeholder for the image
+              Container(
+                height: 160,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+                  child: Image.asset(
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      project.coverImage
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Project Title
-                  Text(
-                    project.name,
-                    style: AppDecoration.semiMediumBlackText,
-                  ),
-                  const SizedBox(height: 6),
-                  // Project Description
-                  Text(
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    project.subtitle,
-                    style: AppDecoration.smallGreyText["desktop"],
-                  ),
-                  const SizedBox(height: 12),
-                  // Tech Stack Tags
-                  Wrap(
-                    runSpacing: 8,
-                    spacing: 8,
-                    children: project.techsUsed.split(',').map((e)=>_buildTag(e)).toList(),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Project Title
+                    Text(
+                      project.name,
+                      style: AppDecoration.semiMediumBlackText,
+                    ),
+                    const SizedBox(height: 6),
+                    // Project Description
+                    Text(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      project.subtitle,
+                      style: AppDecoration.smallGreyText["desktop"],
+                    ),
+                    const SizedBox(height: 12),
+                    // Tech Stack Tags
+                   TechStackChip(techStack: project.techsUsed.split(',').sublist(0,3)),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildTag(String label) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w500,
-          color: Colors.black87,
-        ),
-      ),
-    );
-  }
+ 
 
   _getWidth(BuildContext context) {
     if(constraints!=null && constraints!.maxWidth<=AppDimensions.mobile){

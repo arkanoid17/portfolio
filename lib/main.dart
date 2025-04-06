@@ -8,9 +8,9 @@ import 'package:portfolio/version_2/resources/app_strings.dart';
 import 'firebase_options.dart';
 
 void main() async{
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   runApp(const MyApp());
 }
 
@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // f9fafb
 }
 
 

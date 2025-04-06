@@ -12,7 +12,6 @@ import 'package:portfolio/version_2/utils/app_utils.dart';
 class Skills extends StatefulWidget {
 
   final GlobalKey skillsKey = GlobalKey();
-  // final Map<String,List<String>> skills;
 
   Skills({super.key});
 
@@ -23,35 +22,11 @@ class Skills extends StatefulWidget {
 class _SkillsState extends State<Skills> {
 
   String selected = "Frontend";
-  Map<String,List<String>> skills = {};
-  bool isFetching=true;
-
-  @override
-  void initState() {
-    if(isFetching) {
-      fetchData();
-    }
-    super.initState();
-  }
-  fetchData() async {
-    final snapshot = await FirebaseFirestore.instance.collection('portfolio').get();
-    var items = snapshot.docs;
-    for (var item in items) {
-      if (item.id == "skills") {
-        var data = item.data();
-        for (String key in data.keys) {
-          var value = data[key];
-          if (value is List) {
-            skills.putIfAbsent(key, () => List<String>.from(value.whereType<String>()));
-          }
-        }
-      }
-    }
-    setState(() {
-      isFetching = false;
-    });
-  }
-
+  Map<String,List<String>> skills = {
+    "Frontend":["Android","Flutter","HTML","CSS","JavaScript","ReactJs"],
+    "Backend":["Java","Spring","Spring Boot","Spring MVC","Python Django","MySQL","PostgresSQl"],
+    "Software":["IntelliJ","Android Studio","VsCode","Git","AWS","Firebase"]
+  };
 
 
   @override
@@ -89,7 +64,7 @@ class _SkillsState extends State<Skills> {
         children: [
           SkillDescription(constraints: constraints),
           const SizedBox(height: 20,),
-          isFetching?const Center(child: CircularProgressIndicator()):SkillViewer(constraints: constraints, onTabChanged: _onTabChanged, selected: selected, skills: skills)
+          SkillViewer(constraints: constraints, onTabChanged: _onTabChanged, selected: selected, skills: skills)
         ],
       );
     }
@@ -100,9 +75,9 @@ class _SkillsState extends State<Skills> {
               child: SkillDescription(constraints: constraints)
           ),
           const SizedBox(width: 30,),
-          isFetching?const Center(child: CircularProgressIndicator()):Expanded(
+          Expanded(
               child: SkillViewer(constraints: constraints, onTabChanged: _onTabChanged, selected: selected, skills: skills)
-          ),
+          )
         ],
       );
     }
