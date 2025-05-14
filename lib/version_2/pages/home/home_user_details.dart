@@ -45,8 +45,8 @@ class HomeUserDetails extends StatelessWidget {
             GradientButton(title: "View projects", onPressed: (){}),
             const SizedBox(width: 20,),
             OutlinedButton(
-                onPressed: () => AppUtils.navigateToUrl("https://firebasestorage.googleapis.com/v0/b/recipe-app-910bd.appspot.com/o/ARKAPRABHA_RESUME.pdf?alt=media&token=92a13d45-d208-4131-b426-352931fb4796"),
-                child: Text("View CV",style: AppDecoration.smallBlackText,)
+                onPressed: () => AppUtils.navigateToUrl("https://firebasestorage.googleapis.com/v0/b/recipe-app-910bd.appspot.com/o/ARKAPRABHA_MAHATA_RESUME.pdf?alt=media&token=13e8b4c3-24b8-46f9-a235-10a857b803ce"),
+                child: Text("View Résumé",style: AppDecoration.smallBlackText,)
             )
           ],
         )
